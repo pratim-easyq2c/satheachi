@@ -1,0 +1,1297 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="resources/favicon-32.png">
+  <link rel="apple-touch-icon" href="resources/favicon-180.png">
+  <title data-id="th-modified">Sathe Achi - Elder Care & Senior Care Service in Kolkata | Since 2014</title>
+  <meta name="description" content="Sathe Achi - Best elder care & old age care service in Kolkata & Barasat since 2014. Senior care at home with 24/7 emergency support, companionship, medical coordination. Trusted by 500+ families. Plans from ₹1,000/day." data-id="th-modified">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://satheachi.in/">
+  <meta property="og:type" content="website" data-id="th-modified">
+  <meta property="og:title" content="Sathe Achi - Elder Care & Senior Care Service in Kolkata | Since 2014" data-id="th-modified">
+  <meta property="og:description" content="Sathe Achi - Best elder care & old age care service in Kolkata & Barasat since 2014. Senior care at home with 24/7 emergency support, companionship, medical coordination. Trusted by 500+ families. Plans from ₹1,000/day." data-id="th-modified">
+  <meta property="og:image" content="https://sa-mock.tiiny.site/og-image.jpg" data-id="th-modified">
+  <meta property="og:url" content="https://www.satheachi.in/" data-id="th-modified">
+  <meta property="og:site_name" content="Sathe Achi">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sathe Achi - Elder Care &amp; Senior Care in Kolkata">
+  <meta name="twitter:description" content="Compassionate elder care in Barasat & Kolkata since 2014. 24/7 emergency support, companionship, medical coordination.">
+  <meta name="twitter:image" content="resources/Logo-1.png">
+  <style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { overflow-x: hidden; max-width: 100vw; }
+:root {
+  --primary: #1a7a6d; --primary-dark: #0f5c52; --primary-light: #e8f5f2;
+  --accent: #c9922e; --accent-light: #fdf6e7;
+  --success: #25d366; --danger: #c0392b;
+  --dark: #1a2332; --gray: #3d4f5f; --gray-light: #5c6b7a;
+  --light: #f4f8fa; --white: #fff; --radius: 12px;
+}
+
+body { font-family: 'Inter', 'Noto Sans Bengali', sans-serif; color: var(--dark); line-height: 1.6; padding-bottom: 70px; }
+a { color: var(--primary); text-decoration: none; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* Buttons */
+.btn {
+  display: inline-block; padding: 12px 24px; border-radius: 8px; font-weight: 600;
+  font-size: 15px; border: 2px solid transparent; cursor: pointer; text-align: center;
+  transition: all .2s;
+}
+.btn-primary { background: var(--primary); color: var(--white); }
+.btn-primary:hover { background: var(--primary-dark); }
+.btn-outline { border-color: var(--primary); color: var(--primary); background: transparent; }
+.btn-outline:hover { background: var(--primary); color: var(--white); }
+.btn-danger { background: var(--danger); color: var(--white); }
+.btn-success { background: var(--success); color: var(--white); }
+.btn-block { display: block; width: 100%; }
+.btn-sm { padding: 8px 14px; font-size: 13px; }
+
+/* Header */
+.header { background: var(--white); position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 3px rgba(0,0,0,.1); }
+.header-inner { display: flex; justify-content: space-between; align-items: center; height: 60px; }
+.logo { display: flex; align-items: center; gap: 8px; }
+.logo-img { height: 40px; width: auto; background: #fff; padding: 4px 8px; border-radius: 4px; }
+.menu-toggle { background: none; border: none; font-size: 24px; cursor: pointer; }
+.nav { display: none; flex-direction: column; background: var(--white); padding: 8px 20px 16px; border-top: 1px solid #eee; position: absolute; top: 100%; left: 0; right: 0; box-shadow: 0 4px 12px rgba(0,0,0,.1); }
+.nav.open { display: flex; }
+.nav a { padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: var(--dark); font-weight: 500; }
+.nav-cta { color: var(--primary) !important; font-weight: 700 !important; }
+
+/* Hero */
+.hero { position: relative; padding: 60px 0 40px; overflow: hidden; min-height: 480px; display: flex; align-items: center; }
+.hero-slideshow { position: absolute; inset: 0; z-index: 0; }
+.hero-slide { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.5s ease-in-out; }
+.hero-slide.active { opacity: 1; }
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(28,45,58,.7) 0%, rgba(26,122,109,.55) 100%); }
+.hero-grid { display: flex; flex-direction: column; position: relative; z-index: 1; }
+.hero-content { padding-bottom: 24px; text-align: center; }
+.hero-image { display: none; }
+.badge { display: inline-block; background: rgba(255,255,255,.2); color: var(--white); padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 600; margin-bottom: 16px; backdrop-filter: blur(4px); }
+.hero h1 { font-size: 28px; line-height: 1.3; margin-bottom: 12px; color: var(--white); text-shadow: 0 2px 12px rgba(0,0,0,.35); }
+.hero p { color: #fff; font-size: 16px; margin-bottom: 20px; text-shadow: 0 1px 8px rgba(0,0,0,.3); }
+.hero-actions { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; align-items: center; }
+.hero-actions .btn-outline { border-color: var(--white); color: var(--white); }
+.hero-actions .btn-outline:hover { background: var(--white); color: var(--dark); }
+.trust-strip { display: flex; flex-direction: column; gap: 8px; align-items: center; }
+.trust-item { font-size: 14px; color: var(--white); font-weight: 500; }
+
+/* Gallery Strip */
+.gallery-strip { padding: 4px 0; overflow: hidden; background: var(--dark); position: relative; max-width: 100%; }
+.gallery-scroll { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; gap: 4px; }
+.gallery-scroll::-webkit-scrollbar { display: none; }
+.gallery-scroll img { width: 200px; height: 150px; object-fit: cover; flex-shrink: 0; scroll-snap-align: start; display: block; }
+
+/* Sections */
+.section { padding: 48px 0; }
+.section-alt { background: var(--light); }.section-title { font-size: 24px; text-align: center; margin-bottom: 8px; }
+.section-sub { text-align: center; color: var(--gray); margin-bottom: 32px; font-size: 15px; max-width: 640px; margin-left: auto; margin-right: auto; }
+
+/* NRI spotlight */
+.nri-section { background: linear-gradient(135deg, #0f5c52 0%, #1a7a6d 50%, #1a2332 100%); color: #fff; padding: 56px 0; }
+.nri-grid { display: grid; grid-template-columns: 1fr; gap: 28px; align-items: center; }
+.nri-media { position: relative; border-radius: var(--radius); overflow: hidden; box-shadow: 0 12px 40px rgba(0,0,0,.25); }
+.nri-media img { width: 100%; height: 220px; object-fit: cover; display: block; }
+.nri-play { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,.35); color: #fff; text-decoration: none; font-weight: 600; gap: 8px; transition: background .2s; }
+.nri-play:hover { background: rgba(0,0,0,.5); color: #fff; }
+.nri-play svg { width: 48px; height: 48px; fill: #fff; filter: drop-shadow(0 2px 8px rgba(0,0,0,.4)); }
+.nri-content h2 { font-size: 26px; line-height: 1.25; margin-bottom: 12px; color: #fff; }
+.nri-content p { color: rgba(255,255,255,.92); font-size: 16px; line-height: 1.7; margin-bottom: 16px; }
+.nri-quote { border-left: 4px solid var(--accent); padding: 12px 16px; background: rgba(255,255,255,.08); border-radius: 0 8px 8px 0; font-style: italic; color: #fff; }
+@media (min-width: 900px) { .nri-grid { grid-template-columns: 1fr 1.1fr; } .nri-media img { height: 280px; } }
+
+/* Services */
+.services-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+.service-card { background: var(--white); border-radius: var(--radius); overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,.08); cursor: pointer; transition: transform .2s, box-shadow .2s; }
+.service-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,.12); }
+.service-img { width: 100%; height: 180px; object-fit: cover; display: block; }
+.service-card h3 { font-size: 17px; margin-bottom: 6px; padding: 16px 20px 0; }
+.service-card p { font-size: 14px; color: var(--gray); padding: 0 20px 16px; }
+.service-tag { display: inline-block; margin: 8px 20px 16px; font-size: 12px; background: var(--primary-light); color: var(--primary-dark); padding: 3px 10px; border-radius: 12px; }
+.tag-new { background: var(--accent-light); color: #8a6d2b; }
+
+/* Pricing */
+.pricing-toggle { display: flex; justify-content: center; gap: 0; margin-bottom: 24px; background: #eee; border-radius: 8px; padding: 4px; max-width: 300px; margin-left: auto; margin-right: auto; }.toggle-btn { flex: 1; padding: 10px; border: none; background: transparent; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 14px; }
+.toggle-btn.active { background: var(--white); box-shadow: 0 1px 3px rgba(0,0,0,.1); }
+.save-badge { background: var(--primary); color: var(--white); font-size: 12px; padding: 2px 6px; border-radius: 8px; }
+.pricing-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }.price-card { background: var(--white); border-radius: var(--radius); padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,.08); position: relative; border: 2px solid transparent; }
+.price-card.popular { border-color: var(--primary); }
+.popular-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--primary); color: var(--white); padding: 4px 16px; border-radius: 12px; font-size: 12px; font-weight: 700; }
+.price-header h3 { font-size: 20px; }
+.price-header p { font-size: 13px; color: var(--gray); margin-bottom: 12px; }
+.price-amount { margin-bottom: 8px; }
+.couple-price { font-size: 14px; color: var(--gray); margin-bottom: 4px; padding: 0 24px; }
+.yearly-total { font-size: 13px; color: var(--primary); font-weight: 600; padding: 0 24px; margin-bottom: 4px; }
+.deposit-info { font-size: 13px; color: var(--primary); font-weight: 500; margin-bottom: 12px; padding: 0 24px; }
+.currency { font-size: 20px; font-weight: 700; vertical-align: top; }
+.amount { font-size: 40px; font-weight: 700; }
+.period { font-size: 14px; color: var(--gray); }
+.price-features { list-style: none; margin-bottom: 20px; }
+.price-features li { padding: 6px 0; font-size: 14px; }
+.price-features .included::before { content: '✅ '; }
+.price-features .excluded { color: #ccc; }
+.price-features .excluded::before { content: '— '; }
+.price-features .hidden-feature { display: none; }
+.price-features.expanded .hidden-feature { display: list-item; }
+.price-features .features-more { color: var(--primary); cursor: pointer; font-weight: 600; font-size: 13px; padding: 8px 0; list-style: none; }
+.price-features .features-more::before { content: ''; }
+.pricing-note { text-align: center; font-size: 13px; color: var(--gray); margin-top: 20px; }
+
+/* Team */
+.team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 24px; }
+.team-card { background: var(--white); border-radius: var(--radius); padding: 20px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+.team-avatar { font-size: 48px; margin-bottom: 8px; }
+.team-avatar img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary); }.team-card h4 { font-size: 17px; }
+.team-role { color: var(--primary); font-weight: 600; font-size: 13px; margin-bottom: 6px; }.team-card p { font-size: 13px; color: var(--gray); }
+.verified-badge { display: inline-block; margin-top: 8px; font-size: 12px; }
+.trust-box { background: var(--white); border-radius: var(--radius); padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+.trust-box h4 { margin-bottom: 12px; text-align: center; }
+.verify-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 14px; text-align: center; }
+
+/* Family Portal */
+.portal-card { background: var(--white); border-radius: var(--radius); overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,.1); max-width: 420px; margin: 0 auto; }
+.portal-header { display: flex; justify-content: space-between; align-items: center; padding: 14px 16px; background: var(--primary); color: var(--white); font-weight: 600; }
+.status-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.status-dot.green { background: #68d391; }
+.portal-parent-info { padding: 12px 16px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+.plan-badge { background: var(--primary-light); color: var(--primary-dark); padding: 3px 10px; border-radius: 12px; font-size: 12px; }
+.portal-updates { padding: 12px 16px; }
+.update-item { padding: 8px 0; border-bottom: 1px solid #f5f5f5; }
+.update-time { font-size: 12px; color: var(--gray); }
+.update-item p { font-size: 14px; margin-top: 2px; }
+.portal-actions { padding: 12px 16px; display: flex; gap: 8px; flex-wrap: wrap; }
+.portal-note { text-align: center; font-size: 13px; color: var(--gray); margin-top: 16px; }
+
+/* Testimonials */
+.testimonial-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+.testimonial-card { background: var(--white); border-radius: var(--radius); padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+.stars { margin-bottom: 8px; }
+.testimonial-card > p { font-size: 15px; font-style: italic; color: var(--dark); line-height: 1.6; }
+.translation { font-size: 13px; color: var(--gray); font-style: normal !important; margin-top: 6px; }
+.testimonial-author { margin-top: 12px; padding-top: 12px; border-top: 1px solid #eee; display: flex; align-items: center; gap: 12px; }
+.testimonial-photo { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+.testimonial-author strong { display: block; font-size: 14px; }
+.testimonial-author span { font-size: 12px; color: var(--gray); }
+.review-cta { text-align: center; margin-top: 24px; }
+
+/* News & Articles */
+.news-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+.news-card { display: flex; background: var(--white); border-radius: var(--radius); overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,.08); text-decoration: none; color: var(--dark); transition: transform .2s, box-shadow .2s; }
+.news-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,.12); }
+.news-card img { width: 120px; min-width: 120px; max-width: 120px; height: auto; object-fit: cover; flex-shrink: 0; }
+.news-card-body { padding: 14px 16px; display: flex; flex-direction: column; }
+.news-card-body h4 { font-size: 15px; line-height: 1.4; margin-bottom: 6px; display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.news-card-body p { font-size: 13px; color: var(--gray); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; flex: 1; }
+.news-card-domain { font-size: 12px; color: var(--primary); margin-top: 8px; font-weight: 600; }
+
+/* Reviews */
+.reviews-img-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 24px; align-items: start; }
+.reviews-img-grid img { width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,.1); border: 1px solid #eee; }
+
+/* FAQ */
+.faq-list { max-width: 640px; margin: 0 auto; }
+.faq-item { background: var(--white); border-radius: 8px; margin-bottom: 8px; box-shadow: 0 1px 2px rgba(0,0,0,.06); }
+.faq-item summary { padding: 14px 16px; font-weight: 600; cursor: pointer; font-size: 15px; list-style: none; }
+.faq-item summary::before { content: '+ '; color: var(--primary); font-weight: 700; }
+.faq-item[open] summary::before { content: '− '; }
+.faq-item p { padding: 0 16px 14px; font-size: 14px; color: var(--gray); }
+
+/* Contact */
+.contact-grid { display: grid; grid-template-columns: 1fr; gap: 16px; max-width: 500px; margin: 0 auto; }
+.contact-item { display: flex; gap: 10px; margin-bottom: 10px; align-items: flex-start; font-size: 14px; }
+.contact-item span { font-size: 20px; }
+.contact-item strong { font-size: 13px; }
+.contact-item a { color: var(--primary); font-size: 13px; }
+.contact-form input, .contact-form select, .contact-form textarea,
+#subscribe-modal input, #subscribe-modal select {
+  width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 15px;
+  margin-bottom: 10px; font-family: inherit;
+}
+
+/* Footer */
+.footer { background: var(--dark); color: #b0c4d0; padding: 40px 0 24px; text-align: center; }
+.footer-social { display: flex; gap: 12px; margin-top: 12px; justify-content: center; }
+.social-link { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; transition: all .2s; }
+.social-link.fb { background: #1877f2; color: #fff; }
+.social-link.fb:hover { background: #0d65d9; }
+.social-link.ig { background: #e4405f; color: #fff; }
+.social-link.ig:hover { background: #d62e4a; }
+.social-link.wa { background: #25d366; color: #fff; }
+.social-link.wa:hover { background: #1ebe57; }
+.footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
+.footer-brand { color: var(--primary); font-size: 16px; display: block; margin-bottom: 8px; }
+.footer-grid strong { display: block; color: var(--white); margin-bottom: 8px; font-size: 14px; }
+.footer-grid a { display: block; color: #8aa0b0; font-size: 13px; padding: 3px 0; }
+.footer-bottom { border-top: 1px solid #2a3f4d; padding-top: 16px; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 12px; }
+.footer-bottom p { font-size: 12px; }
+.lang-switch button { background: transparent; border: 1px solid #3a5060; color: #8aa0b0; padding: 4px 12px; border-radius: 4px; cursor: pointer; font-size: 12px; }
+.lang-switch button.active { background: var(--primary); color: var(--white); border-color: var(--primary); }
+
+/* Chat Widget */
+.chat-widget { position: fixed; bottom: 84px; left: 16px; z-index: 95; }
+.chat-fab { width: 56px; height: 56px; border-radius: 50%; background: var(--white); border: 3px solid var(--primary); font-size: 30px; cursor: pointer; box-shadow: 0 3px 12px rgba(0,0,0,.25); animation: chat-bounce 2s infinite; display: flex; align-items: center; justify-content: center; }
+@keyframes chat-bounce {
+  0%, 100% { transform: translateY(0); }
+  20% { transform: translateY(-8px); }
+  40% { transform: translateY(0); }
+  60% { transform: translateY(-4px); }
+  80% { transform: translateY(0); }
+}
+.chat-nudge { position: absolute; bottom: 60px; left: 0; background: var(--white); color: var(--dark); padding: 8px 14px; border-radius: 8px; font-size: 13px; font-weight: 500; box-shadow: 0 2px 8px rgba(0,0,0,.15); white-space: nowrap; opacity: 0; transition: opacity .3s; pointer-events: none; cursor: pointer; }
+.chat-nudge.visible { opacity: 1; pointer-events: auto; }
+.chat-window { display: none; position: absolute; bottom: 60px; left: 0; width: 320px; max-height: 440px; background: var(--white); border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,.2); overflow: hidden; flex-direction: column; }
+.chat-widget.open .chat-window { display: flex; }
+.chat-widget.open .chat-fab { display: none; }
+.chat-widget.open .chat-nudge { display: none; }
+.chat-header { background: var(--primary); color: #fff; padding: 12px 16px; font-weight: 600; font-size: 14px; cursor: pointer; display: flex; justify-content: space-between; }
+.chat-messages { flex: 1; overflow-y: auto; padding: 12px; max-height: 280px; min-height: 200px; }
+.chat-msg { margin-bottom: 10px; padding: 8px 12px; border-radius: 10px; font-size: 13px; line-height: 1.5; white-space: pre-line; max-width: 85%; }
+.chat-msg.bot { background: var(--light); color: var(--dark); border-bottom-left-radius: 2px; }
+.chat-msg.user { background: var(--primary); color: #fff; margin-left: auto; border-bottom-right-radius: 2px; }
+.chat-quick { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.chat-quick button { background: var(--primary-light); color: var(--primary-dark); border: none; padding: 6px 10px; border-radius: 16px; font-size: 12px; cursor: pointer; font-weight: 500; }
+.chat-input-row { display: flex; border-top: 1px solid #eee; }
+.chat-input-row input { flex: 1; border: none; padding: 10px 12px; font-size: 14px; outline: none; }
+.chat-input-row button { background: var(--primary); color: #fff; border: none; padding: 10px 14px; cursor: pointer; font-size: 16px; }
+.chat-wa-link { display: block; text-align: center; padding: 8px; font-size: 12px; color: var(--primary); font-weight: 600; border-top: 1px solid #eee; text-decoration: none; }
+
+/* Back to Top */
+.back-to-top {
+  position: fixed; bottom: 140px; right: 16px; width: 44px; height: 44px;
+  border-radius: 50%; background: var(--primary); color: var(--white); border: none;
+  font-size: 20px; cursor: pointer; z-index: 90; box-shadow: 0 2px 8px rgba(0,0,0,.2);
+  opacity: 0; pointer-events: none; transition: opacity .3s;
+}
+.back-to-top.visible { opacity: 1; pointer-events: auto; }
+
+/* Floating Social Buttons */
+.social-floats {
+  position: fixed; bottom: 84px; right: 16px; z-index: 90;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.social-float {
+  width: 52px; height: 52px; border-radius: 50%; display: flex;
+  align-items: center; justify-content: center;
+  box-shadow: 0 3px 10px rgba(0,0,0,.25); transition: transform .2s;
+}
+.social-float svg { width: 28px; height: 28px; }
+.social-float:hover { transform: scale(1.1); }
+.social-float.fb { background: #1877f2; }
+.social-float.ig { background: #e4405f; }
+.social-float.wa { background: #25d366; }
+.sos-float {
+  position: fixed; bottom: 84px; left: 16px; background: var(--danger); color: var(--white);
+  width: 56px; height: 56px; border-radius: 50%; border: none; font-weight: 900; font-size: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.2); z-index: 90; cursor: pointer; animation: pulse 2s infinite;
+}
+@keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(217,68,82,.4); } 50% { box-shadow: 0 0 0 12px rgba(217,68,82,0); } }
+
+/* Modal */
+.modal-overlay {
+  display: none; position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 200;
+  align-items: center; justify-content: center; padding: 16px;
+}
+.modal-overlay.active { display: flex; }
+.modal { background: var(--white); border-radius: var(--radius); padding: 24px; max-width: 400px; width: 100%; position: relative; max-height: 90vh; overflow-y: auto; }
+.service-modal { max-width: 600px; padding: 0; width: 95%; }
+.service-modal .modal-close { position: fixed; top: 12px; right: 12px; z-index: 10; background: rgba(0,0,0,.5); color: #fff; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+.svc-gallery { display: flex; flex-wrap: wrap; gap: 4px; padding: 4px; }
+.svc-gallery img { height: 180px; object-fit: cover; border-radius: 4px; }
+.svc-gallery img:first-child { width: 100%; height: 240px; border-radius: 8px 8px 0 0; }
+.svc-gallery img:not(:first-child) { flex: 1; min-width: 100px; }
+.service-modal h3 { padding: 16px 20px 8px; font-size: 20px; }
+.service-modal p { padding: 0 20px; color: var(--gray); font-size: 15px; line-height: 1.6; }
+.service-modal ul { padding: 12px 20px 4px 36px; color: var(--dark); font-size: 14px; }
+.service-modal ul li { margin-bottom: 6px; }
+.service-modal .btn { margin: 16px 20px 20px; width: calc(100% - 40px); }
+.modal h3 { margin-bottom: 12px; }
+.modal .btn { margin-bottom: 8px; }
+.modal-close { position: absolute; top: 12px; right: 16px; background: none; border: none; font-size: 20px; cursor: pointer; }
+.form-note { font-size: 12px; color: var(--gray); text-align: center; margin-top: 8px; }
+
+/* Bottom Nav */
+.bottom-nav {
+  position: fixed; bottom: 0; left: 0; right: 0; background: var(--white); display: flex;
+  box-shadow: 0 -2px 8px rgba(0,0,0,.1); z-index: 100;
+}
+.bottom-nav a { flex: 1; text-align: center; padding: 10px 0; color: var(--dark); font-size: 12px; font-weight: 600; display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.bottom-nav a span { font-size: 12px; }
+
+/* Tablet+ */
+@media (min-width: 640px) {
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .team-grid { grid-template-columns: repeat(3, 1fr); }
+  .testimonial-grid { grid-template-columns: 1fr 1fr; }
+  .hero h1 { font-size: 36px; }
+  .hero-actions { flex-direction: row; }
+  .trust-strip { flex-direction: row; gap: 20px; }
+  .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; }
+  .hero-image { display: none; }
+  .gallery-scroll img { width: 250px; height: 180px; }
+  .news-grid { grid-template-columns: 1fr 1fr; }
+  .reviews-img-grid { grid-template-columns: repeat(3, 1fr); }
+  .news-card { flex-direction: column; }
+  .news-card img { width: 100%; height: 160px; min-width: auto; max-width: none; }
+}
+/* Desktop */
+@media (min-width: 768px) {
+  .pricing-grid { grid-template-columns: repeat(3, 1fr); }
+  .menu-toggle { display: none; }
+  .nav {
+    display: flex !important; flex-direction: row; padding: 0; border: none;
+    gap: 18px; align-items: center; position: static; background: none;
+    box-shadow: none; flex-shrink: 0;
+  }
+  .nav a { border: none; padding: 6px 0; font-size: 14px; white-space: nowrap; }
+  .header-inner { height: 70px; }
+  .bottom-nav { display: none; }
+  .social-floats { bottom: 24px; }
+  .chat-widget { bottom: 24px; }
+  .back-to-top { bottom: 80px; }
+  body { padding-bottom: 0; }
+  .service-img { height: 200px; }
+  .section { padding: 56px 0; }
+  .contact-form { max-width: 100%; }
+  .hero { padding: 80px 0 60px; min-height: 520px; }
+  .hero h1 { font-size: 40px; line-height: 1.2; }
+  .hero p { font-size: 18px; }
+}
+
+/* Large Desktop */
+@media (min-width: 1024px) {
+  .hero h1 { font-size: 48px; }
+  .hero p { font-size: 18px; }
+  .hero { padding: 100px 0 80px; min-height: 560px; }
+  .services-grid { grid-template-columns: repeat(4, 1fr); }
+  .service-img { height: 180px; }
+  .testimonial-grid { grid-template-columns: repeat(3, 1fr); }
+  .news-grid { grid-template-columns: repeat(3, 1fr); }
+  .gallery-scroll { overflow: hidden; }
+  .gallery-scroll img { width: auto; min-width: 0; height: 200px; flex: 1; }
+  .section { padding: 72px 0; }
+  .section-title { font-size: 30px; margin-bottom: 10px; }
+  .section-sub { font-size: 16px; margin-bottom: 40px; }
+  .header-inner { height: 72px; }
+  .logo-img { height: 48px; }
+  .nav { gap: 24px; }
+  .nav a { font-size: 15px; }
+  .faq-list { max-width: 800px; }
+  .price-card { padding: 32px; }
+  .pricing-grid { gap: 24px; grid-template-columns: repeat(3, 1fr); }
+  .team-grid { gap: 24px; grid-template-columns: repeat(4, 1fr); }
+  .team-avatar img { width: 96px; height: 96px; }
+  .footer-grid { gap: 40px; }
+}
+
+/* Team expandable */
+.team-grid .team-card:nth-child(n+5) { display: none; }
+.team-grid.expanded .team-card:nth-child(n+5) { display: block; }
+.team-expand-btn { display: block; margin: 16px auto 0; background: var(--primary-light); color: var(--primary-dark); border: none; padding: 10px 24px; border-radius: 8px; font-weight: 600; font-size: 14px; cursor: pointer; }
+.team-expand-btn:hover { background: var(--primary); color: var(--white); }
+
+</style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans+Bengali:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Sathe Achi",
+    "description": "Best elder care and old age care service in Kolkata and Barasat. Senior care at home with companionship, medical coordination, and daily assistance since 2014.",
+    "url": "https://satheachi.in",
+    "telephone": "+91-7044063399",
+    "email": "care@satheachi.in",
+    "address": { "@type": "PostalAddress", "addressLocality": "Barasat", "addressRegion": "West Bengal", "postalCode": "700124", "addressCountry": "IN" },
+    "geo": { "@type": "GeoCoordinates", "latitude": "22.7232", "longitude": "88.4806" },
+    "openingHours": "Mo-Su 09:00-19:00",
+    "priceRange": "₹1,000 - ₹16,000/month",
+    "image": "resources/Logo-1.png",
+    "sameAs": ["https://www.facebook.com/people/Sathe-Achi/100067684187281/", "https://www.instagram.com/satheachii/"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "I feel guilty for not being there. How can a service replace a child's presence?", "acceptedAnswer": { "@type": "Answer", "text": "At Sathe Achi, we don't replace you — we support you. You provide the emotional connection, while we take care of practical needs like emergencies, doctor visits, or even picking up fresh fish from the bazaar." }},
+      { "@type": "Question", "name": "What happens if there is a midnight emergency?", "acceptedAnswer": { "@type": "Answer", "text": "Our Emergency Membership provides 24/7 support, hospital coordination, and immediate presence. You won't need to call neighbors in panic — we'll already be there." }},
+      { "@type": "Question", "name": "Can you help with essential tasks like banking or groceries?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We assist with banking, bazaar trips, and grocery management, so seniors can stay independent without the strain." }},
+      { "@type": "Question", "name": "How are your caregivers verified?", "acceptedAnswer": { "@type": "Answer", "text": "Every caregiver undergoes police verification, reference checks, and mandatory training. All visits are GPS-tracked and logged." }},
+      { "@type": "Question", "name": "What areas do you serve?", "acceptedAnswer": { "@type": "Answer", "text": "We currently serve Barasat and surrounding areas within Kolkata (700124 and nearby PIN codes). We're expanding to South Kolkata soon." }},
+      { "@type": "Question", "name": "What happens in an emergency at night?", "acceptedAnswer": { "@type": "Answer", "text": "Our 24/7 helpline is always active. Call or WhatsApp us anytime. Average emergency response time is under 30 minutes in our service area." }}
+    ]
+  }
+  </script>
+  <script defer data-domain="www.satheachi.in" src="https://analytics.tiiny.site/js/plausible.js"></script></head>
+<body>
+  <!-- Improvement Toggle -->
+  <!-- Social Floating Buttons -->
+  <div class="social-floats">
+    <a href="https://www.facebook.com/people/Sathe-Achi/100067684187281/" target="_blank" class="social-float fb" aria-label="Facebook">
+      <svg viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+    </a>
+    <a href="https://www.instagram.com/satheachii?igsh=MWxtaW9ydjEwcWg3eQ%3D%3D&amp;utm_source=qr" target="_blank" class="social-float ig" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg>
+    </a>
+    <a href="https://wa.me/917044063399?text=Hi%20Sathe%20Achi%2C%20I%20need%20help%20with%20elder%20care" class="social-float wa" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+    </a>
+  </div>
+
+  <!-- SOS Button -->
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-inner">
+      <div class="logo">
+        <img src="resources/Logo-1-300x157.png" alt="Sathe Achi" class="logo-img">
+      </div>
+      <nav id="nav" class="nav">
+        <a href="#" onclick="event.preventDefault();document.getElementById('about-modal').classList.add('active')" data-bn="আমাদের সম্পর্কে">About Us</a>
+        <a href="#services" data-bn="সেবাসমূহ">Services</a>
+        <a href="#pricing" data-bn="মূল্য তালিকা">Pricing</a>
+        <a href="brochure/" data-bn="ব্রোশিওর">Brochure</a>
+        <a href="#team" data-bn="আমাদের দল">Our Team</a>
+        <a href="#testimonials" data-bn="প্রশংসাপত্র">Testimonials</a>
+        <a href="#faq" data-bn="প্রশ্নোত্তর">FAQ</a>
+        <a href="#contact" data-bn="যোগাযোগ">Contact</a>
+      </nav>
+      <button class="menu-toggle" onclick="document.getElementById('nav').classList.toggle('open')" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-slideshow">
+      <img src="resources/activities-3.jpg" class="hero-slide active" alt="Sathe Achi elder care activities">
+      <img src="resources/companionship-new.jpg" class="hero-slide" alt="Companionship with seniors">
+      <img src="resources/activities-2.jpg" class="hero-slide" alt="Group activities for elders">
+      <img src="resources/companionship-2.jpg" class="hero-slide" alt="Elder care companionship">
+      <img src="resources/activities-new.jpg" class="hero-slide" alt="Wellness activities for seniors">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="container hero-grid">
+      <div class="hero-content">
+      <div class="badge" data-bn="🏆 ২০১৪ সাল থেকে ৫০০+ পরিবারের বিশ্বস্ত">🏆 Trusted by 500+ families since 2014</div>
+      <h1 data-bn="আপনি দূরে থাকলেও আপনার বাবা-মা যত্ন পাওয়ার যোগ্য">Your Parents Deserve the Best Elder Care, Even When You're Far Away</h1>
+      <p data-bn="বারাসাত ও কলকাতায় সহানুভূতিশীল, ২৪/৭ প্রবীণ সেবা। চিকিৎসা সহায়তা, সঙ্গ, এবং দৈনন্দিন সহায়তা — সবকিছু একটি সাবস্ক্রিপশনে।">Compassionate, 24/7 elder care in Barasat & Kolkata.<br>Medical support, companionship, and daily assistance — all under one subscription.</p>
+      <div class="hero-actions">
+        <a href="#pricing" class="btn btn-primary" data-bn="📋 পরিকল্পনা ও মূল্য দেখুন">View Plans & Pricing</a>
+        <a href="tel:+917044063399" class="btn btn-outline">📞 +91-7044063399</a>
+      </div>
+      <div class="trust-strip">
+        <div class="trust-item" data-bn="✅ পটভূমি-যাচাইকৃত পরিচর্যাকারী">✅ Background-verified caregivers</div>
+        <div class="trust-item" data-bn="⏰ ২৪/৭ জরুরি সাড়া">⏰ 24/7 emergency response</div>
+        <div class="trust-item" data-bn="📋 কাস্টমাইজযোগ্য যত্ন পরিকল্পনা">📋 Customizable care plans</div>
+      </div>
+      </div>
+      <div class="hero-image">
+        <img src="resources/WhatsApp-Image-2024-12-01-at-1.47.30-PM-2-400x532.jpeg" alt="Sathe Achi elder care">
+      </div>
+    </div>
+  </section>
+
+  <!-- NRI spotlight (from Facebook campaign) -->
+  <section class="nri-section" id="nri">
+    <div class="container nri-grid">
+      <a class="nri-media" href="https://www.facebook.com/watch/?v=1480978579833340" target="_blank" rel="noopener" aria-label="Watch Sathe Achi NRI video on Facebook">
+        <img src="resources/companionship-new.jpg" alt="Sathe Achi — care for parents when you are far away">
+        <span class="nri-play">
+          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          Watch our story
+        </span>
+      </a>
+      <div class="nri-content">
+        <p class="badge" style="margin-bottom:12px;background:rgba(255,255,255,.15);color:#fff;">For families abroad</p>
+        <h2 data-bn="স্মার্টফোনের পর্দার ওপার দিয়ে বাবা-মাকে বড় হতে দেখা কঠিন">When you watch your parents age through a screen</h2>
+        <p data-bn="আপনি তাঁদের স্বাস্থ্য, নিরাপত্তা এবং একাকীত্ব নিয়ে চিন্তিত। সাথে আছি ঠিক সেখানেই দাঁড়ায় যেখানে আপনি থাকতে পারেন না — পেশাদার চিকিৎসা সহায়তা, আসল বাঙালি সঙ্গের উষ্ণতায়।">You worry about their health, safety, and loneliness. Sathe Achi steps in right where you left off — professional medical support wrapped in the warmth of true Bengali companionship.</p>
+        <blockquote class="nri-quote">Kolkata lies in its people — especially the ones who raised us. We are right here, standing by them. 🤝</blockquote>
+        <div class="hero-actions" style="margin-top:20px;flex-direction:row;flex-wrap:wrap;">
+          <a href="tel:+917044063399" class="btn btn-primary">📞 +91-7044063399</a>
+          <a href="https://wa.me/917044063399" class="btn btn-outline" style="border-color:#fff;color:#fff;">WhatsApp us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="section">
+    <div class="container">
+      <h2 class="section-title" data-bn="আমাদের সেবাসমূহ">Our Services</h2>
+      <p class="section-sub" data-bn="আপনার প্রিয়জনের প্রয়োজন অনুযায়ী সম্পূর্ণ যত্ন">Comprehensive care tailored to your loved one's needs</p>
+      <div class="services-grid">
+        <div class="service-card" onclick="openService(0)">
+          <img src="resources/emergency-v3.jpg" alt="Emergency Hospitalization" class="service-img">
+          <h3 data-bn="জরুরি হাসপাতালে ভর্তি">Emergency Hospitalization</h3>
+          <p data-bn="তাৎক্ষণিক হাসপাতালে ভর্তির সমন্বয়, অ্যাম্বুলেন্স ব্যবস্থা, এবং জরুরি অবস্থায় পাশে থাকা।">Immediate hospital admission coordination, ambulance arrangement, and bedside support during emergencies.</p>
+          <span class="service-tag" data-bn="সব পরিকল্পনায় অন্তর্ভুক্ত">Included in all plans</span>
+        </div>
+        <div class="service-card" onclick="openService(1)">
+          <img src="resources/doctor-consultation-v2.jpg" alt="Doctor Consultation" class="service-img">
+          <h3 data-bn="ডাক্তারের পরামর্শ">Doctor Consultation</h3>
+          <p data-bn="বাড়িতে নিয়মিত স্বাস্থ্য পরীক্ষা। বিদেশে বা ভারতের অন্যত্র থাকা পরিবারের জন্য ভার্চুয়াল পরামর্শ উপলব্ধ।">Regular health check-ups at home. Virtual consultations accessible for family members living abroad or in other parts of India.</p>
+          <span class="service-tag tag-new" data-bn="এখন টেলিকনসালটেশন সহ">Now with Teleconsultation</span>
+        </div>
+        <div class="service-card" onclick="openService(2)">
+          <img src="resources/pathological-v2.jpg" alt="Lab Test" class="service-img">
+          <h3 data-bn="ল্যাব পরীক্ষা">Lab Test</h3>
+          <p data-bn="বাড়িতে রক্ত পরীক্ষা, প্রস্রাব পরীক্ষা এবং নিয়মিত স্বাস্থ্য পরীক্ষার জন্য নমুনা সংগ্রহ। ল্যাব পরীক্ষার জন্য জনবল সহায়তা।">Home sample collection for blood tests, urine tests, and routine health screenings. Manpower support for lab test.</p>
+        </div>
+        <div class="service-card" onclick="openService(3)">
+          <img src="resources/companionship-new.jpg" alt="Companionship" class="service-img">
+          <h3 data-bn="সঙ্গ">Companionship</h3>
+          <p data-bn="কথোপকথন, পড়া, হাঁটা এবং মানসিক স্বাস্থ্যের জন্য মানসিক সহায়তার জন্য প্রশিক্ষিত সঙ্গী।">Trained companions for conversation, reading, walks, and emotional support to support mental health.</p>
+        </div>
+        <div class="service-card" onclick="openService(4)">
+          <img src="resources/banking-new.jpg" alt="Banking Assistance" class="service-img">
+          <h3 data-bn="ব্যাংকিং সহায়তা">Banking Assistance</h3>
+          <p data-bn="ব্যাংকে যাওয়া, বিল পেমেন্ট, পেনশন সংগ্রহ এবং সরকারি নথিপত্রের কাজে সাহায্য।">Help with bank visits, bill payments, pension collection and government document work.</p>
+        </div>
+        <div class="service-card" onclick="openService(5)">
+          <img src="resources/medication-v2.jpg" alt="Medication Management" class="service-img">
+          <h3 data-bn="ওষুধ ব্যবস্থাপনা">Medication Management</h3>
+          <p data-bn="ফার্মেসি সমন্বয় এবং প্রেসক্রিপশন ট্র্যাকিং।">Pharmacy coordination and prescription tracking.</p>
+          <span class="service-tag tag-new" data-bn="নতুন সেবা">New Service</span>
+        </div>
+        <div class="service-card" onclick="openService(6)">
+          <img src="resources/weekly-bazaar-v2.jpg" alt="Weekly Bazaar" class="service-img">
+          <h3 data-bn="সাপ্তাহিক বাজার">Weekly Bazaar</h3>
+          <p data-bn="মুদি কেনাকাটা, সবজি বাজার এবং গৃহস্থালি সরবরাহ ব্যবস্থাপনা।">Grocery shopping, vegetable market runs and household supply management.</p>
+        </div>
+        <div class="service-card" onclick="openService(7)">
+          <img src="resources/activities-new.jpg" alt="Activities" class="service-img">
+          <h3 data-bn="কার্যকলাপ ও সুস্থতা">Activities & Wellness</h3>
+          <p data-bn="ইনডোর গেমস, বাইরে হাঁটা, পিকনিক, ট্যুর ইত্যাদি এবং মানসিক সুস্থতার জন্য সামাজিক গ্রুপ কার্যকলাপ।">Indoor games, outdoor walks, picnic, tours etc. and social group activities for mental well-being.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery-strip">
+    <div class="gallery-scroll">
+      <img src="resources/gallery-1.jpg" alt="Sathe Achi care">
+      <img src="resources/gallery-2.jpg" alt="Elder companionship">
+      <img src="resources/gallery-3.jpg" alt="Senior activities">
+      <img src="resources/gallery-4.jpg" alt="Community care">
+      <img src="resources/gallery-5.jpg" alt="Wellness support">
+      <img src="resources/activities-new.jpg" alt="Elder care activity">
+      <img src="resources/companionship-2.jpg" alt="Companionship">
+      <img src="resources/activities-2.jpg" alt="Activities">
+      <img src="resources/doctor-consultation-2.jpeg" alt="Doctor consultation">
+      <img src="resources/activities-3.jpg" alt="Wellness activities">
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title" data-bn="স্বচ্ছ মূল্য তালিকা">Transparent Pricing</h2>
+      <p class="section-sub" data-bn="আপনার পরিবারের প্রয়োজন অনুযায়ী পরিকল্পনা বেছে নিন। কোনো লুকানো চার্জ নেই।">Choose the plan that fits your family's need. No hidden charges.</p>
+
+      <div class="pricing-toggle">
+        <button class="toggle-btn active" onclick="togglePricing('monthly')" data-bn="মাসিক">Monthly</button>
+        <button class="toggle-btn" onclick="togglePricing('yearly')" data-bn="বার্ষিক">Yearly <span class="save-badge" data-bn="৫% সাশ্রয়">Save 5%</span></button>
+      </div>
+
+      <div class="pricing-grid" id="pricing-grid"></div>
+
+      <div class="pricing-note" style="margin-top:16px; font-size:13px; color:var(--gray); line-height:1.8;">
+        <p><strong>*Plans can be customised</strong></p>
+        <p>*Every other third party involvement (Dementia Expert, nurse, physiotherapist, aya etc.) is on actual price</p>
+        <p>*Rupees 200 per hour per person for medical assistance</p>
+        <p>*Rupees 200 for non-medical activities like official job, bazar etc.</p>
+        <p>*Deposit amount will be refunded within 72 hours if discontinued</p>
+      </div>
+      <p class="pricing-note" style="margin-top:12px; font-weight:600; color:var(--primary);">100% transparent and quick refund policy.</p>
+    </div>
+  </section>
+
+  <!-- Subscribe Modal -->
+  <div id="subscribe-modal" class="modal-overlay">
+    <div class="modal">
+      <button class="modal-close" onclick="document.getElementById('subscribe-modal').classList.remove('active')">✕</button>
+      <h3>Subscribe to <span id="plan-name">Regular</span> Plan</h3>
+      <form onsubmit="handleSubscribe(event)">
+        <input type="text" placeholder="Your Name" required>
+        <input type="tel" placeholder="Phone Number" required>
+        <input type="text" placeholder="Elder's Name" required>
+        <input type="text" placeholder="Address in Barasat/Kolkata" required>
+        <select required>
+          <option value="">Select any health conditions</option>
+          <option>Diabetes</option>
+          <option>Heart condition</option>
+          <option>Mobility issues</option>
+          <option>Dementia/Alzheimer's</option>
+          <option>No major conditions</option>
+          <option>Other</option>
+        </select>
+        <button type="submit" class="btn btn-primary btn-block">Get Started</button>
+        <p class="form-note">We'll call you within 2 hours to complete the assessment.</p>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- News & Articles -->
+  <section id="news" class="section">
+    <div class="container">
+      <h2 class="section-title" data-bn="সংবাদ ও প্রবন্ধ">News & Articles</h2>
+      <p class="section-sub" data-bn="আমাদের সর্বশেষ খবর এবং প্রবীণ যত্নের টিপস">Latest updates and elder care insights</p>
+      <div class="news-grid" id="news-grid"></div>
+    </div>
+  </section>
+  <!-- Team -->
+  <section id="team" class="section">
+    <div class="container">
+      <h2 class="section-title" data-bn="আমাদের যাচাইকৃত কেয়ার টিম">Our Verified Care Team</h2>
+      <p class="section-sub" data-bn="প্রতিটি পরিচর্যাকারী পটভূমি-যাচাইকৃত, প্রশিক্ষিত এবং সহানুভূতিশীল">Every caregiver is background-verified, trained, and compassionate</p>
+      <img src="resources/team-group.jpg" alt="Sathe Achi Care Team" style="width:100%; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,.1);">
+    </div>
+  </section>
+
+  <!-- Family Portal -->
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="section">
+    <div class="container">
+      <h2 class="section-title" data-bn="পর্যালোচনা">Reviews</h2>
+      <div class="reviews-img-grid">
+        <img src="resources/review-1.png" alt="Google Review">
+        <img src="resources/review-2.png" alt="Google Review">
+        <img src="resources/review-3.png" alt="Google Review">
+      </div>
+      <div class="review-cta">
+        <a href="https://maps.google.com/?cid=1128786054787875263&amp;g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYASAA&amp;hl=en-US&amp;source=embed" class="btn btn-outline">⭐ See All Google Reviews</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title" data-bn="প্রায়শই জিজ্ঞাসিত প্রশ্ন">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary data-bn="আমি সেখানে নেই বলে অপরাধবোধ হয়। একটি সেবা কি সন্তানের উপস্থিতি প্রতিস্থাপন করতে পারে?">I feel guilty for not being there. How can a service replace a child's presence?</summary>
+          <p data-bn="সাথে আছি-তে আমরা আপনাকে প্রতিস্থাপন করি না — আমরা আপনাকে সহায়তা করি। আপনি কল ও ভিজিটের মাধ্যমে আবেগের সংযোগ দেন, আমরা জরুরি অবস্থা, ডাক্তারের ভিজিট বা বাজার থেকে মাছ আনার মতো ব্যবহারিক প্রয়োজনগুলো সামলাই।">At Sathe Achi, we don't replace you — we support you. You provide the emotional connection through calls and visits, while we take care of practical needs like emergencies, doctor visits, or even picking up fresh fish from the bazaar. This way, your time with your parents can be about love and joy, not chores.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-bn="আমার বাবা-মায়ের সাথে আসলে কী হচ্ছে তা আমি কীভাবে জানব?">How do I know what's actually happening with my parents?</summary>
+          <p data-bn="আমরা আপনাকে স্পষ্ট, নিয়মিত আপডেট দিয়ে অবহিত রাখি। ডাক্তারের রিপোর্ট হোক বা কোনো কার্যকলাপ উপভোগ করার ছবি, আপনি সবসময় জানবেন তাঁরা কেমন আছেন। আমাদের আপনার স্বচ্ছ স্থানীয় সেতু হিসেবে ভাবুন।">We keep you informed with clear, regular updates. Whether it's a doctor's report or a photo of them enjoying an activity, you'll always know how they're doing. Think of us as your transparent local bridge.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-bn="মাঝরাতে জরুরি অবস্থা হলে কী হবে?">What happens if there is a midnight emergency?</summary>
+          <p data-bn="জরুরি অবস্থা চাপের হতে পারে, বিশেষ করে দূর থেকে। আমাদের ইমার্জেন্সি মেম্বারশিপ ২৪/৭ সহায়তা, হাসপাতাল সমন্বয় এবং তাৎক্ষণিক উপস্থিতি প্রদান করে। আপনাকে আতঙ্কে প্রতিবেশীদের ফোন করতে হবে না — আমরা ইতিমধ্যে সেখানে থাকব।">Emergencies can be stressful, especially from afar. Our Emergency Membership provides 24/7 support, hospital coordination, and immediate presence. You won't need to call neighbors in panic — we'll already be there.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-bn="আপনারা কি ব্যাংকিং বা মুদি কেনাকাটার মতো প্রয়োজনীয় কাজে সাহায্য করতে পারেন?">Can you help with essential tasks like banking or groceries?</summary>
+          <p data-bn="হ্যাঁ। অনেক প্রবীণ ভিড়ের বাজার বা অনলাইন ব্যাংকিং কঠিন মনে করেন। আমরা ব্যাংকিং, বাজার যাওয়া এবং মুদি ব্যবস্থাপনায় সহায়তা করি, যাতে তাঁরা কষ্ট ছাড়াই স্বাধীন থাকতে পারেন।">Yes. Many seniors find crowded markets or online banking difficult. We assist with banking, bazaar trips, and grocery management, so they can stay independent without the strain.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-bn="আমি এতদিন নিজেই সামলেছি, বাইরের লোককে কেন সাহায্য করতে দেব?">Why should I let outsiders help me when I've managed on my own for years?</summary>
+          <p data-bn="প্রকৃত স্বাধীনতা মানে আপনি যা উপভোগ করেন তাতে মনোযোগ দেওয়ার স্বাধীনতা। মেডিকেল টেস্টের লাইন বা ঘরের মেরামতের মতো কাজ আমাদের হাতে দিলে, আপনি সঙ্গ, শখ এবং সামাজিক জীবনের জন্য শক্তি বাঁচাতে পারেন।">True independence means having the freedom to focus on what you enjoy. By letting us handle tasks like medical test queues or household repairs, you save your energy for companionship, hobbies, and social life.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-bn="ছেলেমেয়েরা চলে যাওয়ার পর থেকে একা লাগে। আপনারা কি শুধু চিকিৎসা সেবার বেশি কিছু দেন?">I feel lonely since my children moved away. Do you offer more than medical care?</summary>
+          <p data-bn="অবশ্যই। কলকাতায় জীবন মানে আড্ডা আর সম্প্রদায়। আমাদের সঙ্গ ও কার্যকলাপ সেবা দৈনন্দিন জীবনে সংযোগ ফিরিয়ে আনে, শারীরিক স্বাস্থ্যের পাশাপাশি মানসিক সুস্থতা নিশ্চিত করে।">Absolutely. Life in Kolkata is about Adda and community. Our companionship and activity services bring connection back into daily life, ensuring emotional well-being alongside physical health.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-bn="কর্মীরা কি বিশ্বস্ত এবং আমার বাড়ির প্রতি শ্রদ্ধাশীল?">Is the staff reliable and respectful of my home?</summary>
+          <p data-bn="বিশ্বাস সাথে আছি-র মূলে। কলকাতায় ১২ বছরেরও বেশি সময় ধরে, আমাদের দল শুধু পরিচর্যায় নয়, বাঙালি পরিবারের সাংস্কৃতিক সূক্ষ্মতায়ও প্রশিক্ষিত। আমরা প্রতিটি বাড়িকে যথাযোগ্য সম্মান দিই।">Trust is at the heart of Sathe Achi. With over 12 years in Kolkata, our team is trained not only in caregiving but also in the cultural nuances of Bengali households. We treat every home with the respect it deserves.</p>
+        </details>
+        <details class="faq-item">
+          <summary data-bn="পরিবার ছুটিতে থাকাকালীন কয়েক সপ্তাহের জন্য সাহায্য দরকার হলে?">What if I only need help for a few weeks while my family is on vacation?</summary>
+          <p data-bn="আমরা নমনীয় শর্ট-টার্ম কেয়ার এবং স্পেশাল মেম্বারশিপ অফার করি। সুস্থতার সহায়তা হোক বা আত্মীয়রা দূরে থাকাকালীন সাময়িক সাহায্য, আমরা নির্বিঘ্নে আসি এবং আপনি প্রস্তুত হলে চলে যাই।">We offer flexible Short-Term Care and Special Memberships. Whether it's recovery support or temporary help while relatives are away, we step in seamlessly and step out when you're ready.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 class="section-title" data-bn="যোগাযোগ করুন">Get In Touch</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item">
+            <span>📍</span>
+            <div><strong data-bn="অফিস">Office</strong><br>Barasat, Kolkata — 700124</div>
+          </div>
+          <div class="contact-item">
+            <span>📞</span>
+            <div><strong data-bn="ফোন">Phone</strong><br><a href="tel:+917044063399">+91-7044063399</a></div>
+          </div>
+          <div class="contact-item">
+            <span>✉️</span>
+            <div><strong data-bn="ইমেইল">Email</strong><br><a href="mailto:care@satheachi.in">care@satheachi.in</a></div>
+          </div>
+          <div class="contact-item">
+            <span>⏰</span>
+            <div><strong data-bn="সময়">Hours</strong><br><span data-bn="অফিস: সকাল ১০টা–সন্ধ্যা ৭টা">Office: 10 AM–7 PM</span><br><span data-bn="জরুরি: ২৪/৭">Emergency: 24/7</span></div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-fb-icon"><svg viewBox="0 0 24 24" fill="#1877f2" width="24" height="24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg></span>
+            <div><strong>Facebook</strong><br><a href="https://www.facebook.com/people/Sathe-Achi/100067684187281/" target="_blank" data-bn="আমাদের পেজে যান">Follow us on Facebook</a></div>
+          </div>
+          </div>
+          <div class="contact-item">
+            <span style="color:#e4405f;"><svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg></span>
+            <div><strong>Instagram</strong><br><a href="https://www.instagram.com/satheachii?igsh=MWxtaW9ydjEwcWg3eQ%3D%3D&amp;utm_source=qr" target="_blank" data-bn="ইনস্টাগ্রামে ফলো করুন">Follow us on Instagram</a></div>        </div>
+        <form class="contact-form" onsubmit="handleContact(event)">
+          <input type="text" placeholder="Your Name" required>
+          <input type="tel" placeholder="Phone Number" required>
+          <input type="email" placeholder="Email (optional)">
+          <select>
+            <option value="">I'm interested in...</option>
+            <option>Regular Care</option>
+            <option>Complete Care</option>
+            <option>Short Term Care</option>
+          </select>
+          <textarea placeholder="Tell us about your needs..." rows="3"></textarea>
+          <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid" style="grid-template-columns: 1fr; justify-items: center;">
+        <div>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/people/Sathe-Achi/100067684187281/" target="_blank" aria-label="Facebook" class="social-link fb">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+            </a>
+            <a href="https://www.instagram.com/satheachii?igsh=MWxtaW9ydjEwcWg3eQ%3D%3D&amp;utm_source=qr" target="_blank" aria-label="Instagram" class="social-link ig">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg>
+            </a>
+            <a href="https://wa.me/917044063399" target="_blank" aria-label="WhatsApp" class="social-link wa">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <strong data-bn="কোম্পানি">Company</strong>
+          <a href="#" onclick="event.preventDefault();document.getElementById('about-modal').classList.add('active')">About Us</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#testimonials">Reviews</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 Sathe Achi Elder Care. All rights reserved.</p>
+        <div class="lang-switch">
+          <button class="active" onclick="switchLang('en')">English</button>
+          <button onclick="switchLang('bn')">বাংলা</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Service Detail Modal -->
+  <div id="service-modal" class="modal-overlay">
+    <div class="modal service-modal">
+      <button class="modal-close" onclick="document.getElementById('service-modal').classList.remove('active')">✕</button>
+      <div id="svc-gallery" class="svc-gallery"></div>
+      <h3 id="svc-title"></h3>
+      <p id="svc-desc"></p>
+      <ul id="svc-features"></ul>
+      <a href="#pricing" class="btn btn-primary btn-block" onclick="document.getElementById('service-modal').classList.remove('active')">View Plans</a>
+    </div>
+  </div>
+
+  <!-- About Us Modal -->
+  <div id="about-modal" class="modal-overlay" onclick="if(event.target===this)this.classList.remove('active')">
+    <div class="modal service-modal">
+      <button class="modal-close" onclick="document.getElementById('about-modal').classList.remove('active')">✕</button>
+      <div style="padding:32px;">
+        <div style="text-align:center;margin-bottom:20px;">
+          <img src="resources/Logo-1-300x157.png" alt="Sathe Achi" style="height:50px;background:#fff;padding:6px 12px;border-radius:6px;">
+        </div>
+        <h3 style="margin-bottom:6px;color:var(--primary);font-size:22px;text-align:center;">We Make a Difference in Senior Lives</h3>
+        <p style="text-align:center;color:var(--gray);font-size:13px;margin-bottom:20px;">Since 2014 | Barasat, Kolkata</p>
+        <hr style="border:none;border-top:1px solid #eee;margin-bottom:20px;">
+        <p style="margin-bottom:14px;line-height:1.8;font-size:15px;">The verge world has wrapped itself up inside an abalone. <strong>'Para Culture'</strong> is almost gone. Every single family is now separated. The concept of <em>'parar chhele'</em> or 'the guy next door' is almost extinct.</p>
+        <p style="margin-bottom:14px;line-height:1.8;font-size:15px;">There was a time, 20-30 years back, when few young guys from the locality were always there to help and support the elders. <em>'Parar kaku/jyethu's'</em> were mostly dependent on them. <em>''Eiii, edike ekbar shune ja to''</em>— was more than enough to gather 5-10 people. There was unity and coherence in every para and among its people.</p>
+        <p style="margin-bottom:14px;line-height:1.8;font-size:15px;font-weight:500;">But those days are almost over.</p>
+        <p style="margin-bottom:14px;line-height:1.8;font-size:15px;">Young people leaving their family behind are anxious about their parents at home. They are well connected with their parents through phone or social media. But surely they do understand that there are times when physical presence is also very important. Like a faithful hand and anchored soul.</p>
+        <div style="background:var(--primary-light);padding:16px 20px;border-radius:8px;border-left:4px solid var(--primary);margin-top:16px;">
+          <p style="margin:0;line-height:1.7;font-size:15px;font-weight:600;color:var(--primary-dark);">Here the concept of 'SATHE ACHI' emerges.<br>We are here to support elders for their medical and non-medical needs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chat Widget -->
+  <div id="chat-widget" class="chat-widget">
+    <div class="chat-window">
+      <div class="chat-header" onclick="toggleChat()">
+        <span>💬 Sohini - Sathe Achi</span>
+        <span class="chat-close">✕</span>
+      </div>
+      <div id="chat-messages" class="chat-messages"></div>
+      <div class="chat-input-row">
+        <input type="text" id="chat-input" placeholder="Type your question..." onkeydown="if(event.key==='Enter')handleChatSend()">
+        <button onclick="handleChatSend()">➤</button>
+      </div>
+      <a href="https://wa.me/917044063399?text=Hi%20Sathe%20Achi" target="_blank" class="chat-wa-link">💬 Chat with a human on WhatsApp</a>
+    </div>
+    <div id="chat-nudge" class="chat-nudge" onclick="toggleChat()">Hi! I am Sohini 💬 Need help?</div>
+    <button class="chat-fab" onclick="toggleChat()" aria-label="Chat">🙋🏽‍♀️</button>
+  </div>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+  <!-- Bottom Nav (Mobile) -->
+  <nav class="bottom-nav">
+    <a href="tel:+917044063399">📞<span data-bn="কল">Call</span></a>
+    <a href="https://wa.me/917044063399">💬<span>WhatsApp</span></a>
+    <a href="#pricing">💰<span data-bn="পরিকল্পনা">Plans</span></a>
+  </nav>
+
+  <script>
+// Close nav on link click
+document.querySelectorAll('.nav a').forEach(a => {
+  a.addEventListener('click', () => document.getElementById('nav').classList.remove('open'));
+});
+
+// Service detail modals
+const services = [
+  { title: 'Emergency Hospitalization', titleBn: 'জরুরি হাসপাতালে ভর্তি',
+    desc: 'Our 24/7 emergency service ensures immediate support for elders in critical situations. We coordinate hospital admissions, arrange ambulances, provide bedside support, and keep family members informed throughout the process. Our team stays with the patient until the family arrives.',
+    descBn: 'আমাদের ২৪/৭ জরুরি সেবা প্রবীণদের জন্য তাৎক্ষণিক সহায়তা নিশ্চিত করে। আমরা হাসপাতালে ভর্তির সমন্বয়, অ্যাম্বুলেন্স ব্যবস্থা, এবং পরিবারকে অবহিত রাখি।',
+    features: ['24/7 emergency helpline','Ambulance coordination','Hospital admission support','Bedside companion during stay','Family communication updates','Post-discharge follow-up'],
+    imgs: ['emergency-v3.jpg'] },
+  { title: 'Doctor Consultation', titleBn: 'ডাক্তারের পরামর্শ',
+    desc: 'Regular health check-ups at home by qualified doctors. We also offer teleconsultation for family members living abroad so they can speak directly with the doctor about their parent\'s health.',
+    descBn: 'যোগ্য ডাক্তারদের দ্বারা বাড়িতে নিয়মিত স্বাস্থ্য পরীক্ষা। বিদেশে থাকা পরিবারের জন্য টেলিকনসালটেশনও উপলব্ধ।',
+    features: ['Home visits by qualified doctors','Regular health monitoring','Prescription management','Teleconsultation for family','Health reports shared digitally','Specialist referrals when needed'],
+    imgs: ['doctor-consultation-v2.jpg','doctor-consultation-v2b.jpeg'] },
+  { title: 'Lab Test', titleBn: 'প্যাথলজিক্যাল পরীক্ষা',
+    desc: 'Home sample collection for blood tests, urine tests, sugar tests, and routine health screenings. Reports are shared digitally with both the elder and their family members for easy tracking.',
+    descBn: 'রক্ত পরীক্ষা, প্রস্রাব পরীক্ষা, সুগার পরীক্ষা এবং নিয়মিত স্বাস্থ্য পরীক্ষার জন্য বাড়িতে নমুনা সংগ্রহ। রিপোর্ট ডিজিটালি শেয়ার করা হয়।',
+    features: ['Home sample collection','Blood, urine & sugar tests','Digital report sharing','Regular health screenings','Partnered with certified labs','Family access to reports'],
+    imgs: ['pathological-v2.jpg'] },
+  { title: 'Companionship', titleBn: 'সঙ্গ',
+    desc: 'Trained companions visit elders for conversation, reading, walks, and emotional support. Loneliness is one of the biggest challenges for seniors — our companions become trusted friends who bring joy and connection.',
+    descBn: 'প্রশিক্ষিত সঙ্গীরা কথোপকথন, পড়া, হাঁটা এবং মানসিক সহায়তার জন্য প্রবীণদের সাথে দেখা করেন। একাকীত্ব দূর করতে আমাদের সঙ্গীরা বিশ্বস্ত বন্ধু হয়ে ওঠেন।',
+    features: ['Regular companion visits','Conversation & emotional support','Accompanied walks & outings','Reading & indoor activities','Festival celebrations together','Regular updates to family'],
+    imgs: ['companionship-new.jpg','companionship-2.jpg','companion-3.jpg'] },
+  { title: 'Banking Assistance', titleBn: 'ব্যাংকিং সহায়তা',
+    desc: 'We help elders with bank visits, bill payments, pension collection, and government document work. Our trained staff accompanies them or handles errands on their behalf with full transparency.',
+    descBn: 'আমরা প্রবীণদের ব্যাংকে যাওয়া, বিল পেমেন্ট, পেনশন সংগ্রহ এবং সরকারি নথিপত্রের কাজে সাহায্য করি।',
+    features: ['Bank visit accompaniment','Bill payment assistance','Pension collection','Government document work','Post office errands','Full transparency & receipts'],
+    imgs: ['banking-new.jpg'] },
+  { title: 'Medication Management', titleBn: 'ওষুধ ব্যবস্থাপনা',
+    desc: 'Pharmacy coordination and prescription tracking. We ensure medicines are always stocked and organized.',
+    descBn: 'দৈনিক ওষুধের রিমাইন্ডার, ফার্মেসি সমন্বয়, এবং প্রেসক্রিপশন ট্র্যাকিং। আমরা নিশ্চিত করি আপনার বাবা-মা কোনো ডোজ মিস করবেন না।',
+    features: ['Pharmacy coordination','Prescription tracking','Medicine stock management','Doctor prescription updates','Family notification on adherence'],
+    imgs: ['resources/medication-v2.jpg'], fullUrl: true },
+  { title: 'Weekly Bazaar', titleBn: 'সাপ্তাহিক বাজার',
+    desc: 'We handle grocery shopping, vegetable market runs, and household supply management. Our staff shops based on the elder\'s preferences and provides receipts for every purchase.',
+    descBn: 'আমরা মুদি কেনাকাটা, সবজি বাজার, এবং গৃহস্থালি সরবরাহ ব্যবস্থাপনা করি। প্রতিটি কেনাকাটার রসিদ দেওয়া হয়।',
+    features: ['Weekly grocery shopping','Vegetable market runs','Household supplies','Shopping per preferences','Receipts for every purchase','Delivery to doorstep'],
+    imgs: ['weekly-bazaar-v2.jpg'] },
+  { title: 'Activities & Wellness', titleBn: 'কার্যকলাপ ও সুস্থতা',
+    desc: 'Indoor games, outdoor walks, picnics, and social group activities. We keep elders mentally engaged through fun, age-appropriate activities.',
+    descBn: 'ইনডোর গেমস, বাইরে হাঁটা, পিকনিক, এবং সামাজিক গ্রুপ কার্যকলাপ। আমরা প্রবীণদের মানসিকভাবে সক্রিয় রাখি।',
+    features: ['Indoor games & puzzles','Outdoor walks & park visits','Group picnics & outings','Festival celebrations','Social gatherings with peers'],
+    imgs: ['activities-new.jpg','activities-2.jpg','activities-3.jpg'] }
+];
+
+function openService(i) {
+  const s = services[i];
+  const lang = document.documentElement.lang;
+  document.getElementById('svc-title').textContent = lang === 'bn' ? s.titleBn : s.title;
+  document.getElementById('svc-desc').textContent = lang === 'bn' ? s.descBn : s.desc;
+  document.getElementById('svc-gallery').innerHTML = s.imgs.map(img => {
+    const src = s.fullUrl ? img : `resources/${img.split('/').pop()}`;
+    return `<img src="${src}" alt="${s.title}">`;
+  }).join('');
+  document.getElementById('svc-features').innerHTML = s.features.map(f => `<li>${f}</li>`).join('');
+  document.getElementById('service-modal').classList.add('active');
+}
+
+// News & Articles
+const articles = [
+  { url: 'https://www.etvbharat.com/bn/!state/the-aged-purchase-companionship-and-friends-west-bengal-news-wbs24100106696',
+    title: 'বন্ধু হবে কি আমার... অপেক্ষায় তপন-সংঘমিত্রার মতো প্রবীণরা',
+    desc: 'টাকা দিয়ে তাঁরা কিনছেন আড্ডা মারার সাথী। বন্ধুত্বের হাত বাড়িয়ে দিচ্ছে \'সাথে আছি\' নামের সংস্থা।',
+    img: 'https://imgs.etvbharat.com/etvbharat/prod-images/02-10-2024/1200-675-22584262-thumbnail-16x9-aaaa-new.jpg',
+    domain: 'etvbharat.com' },
+  { url: 'https://youtu.be/Gf5CT7ZGJoo?si=dALLPAiFxzmWE7g8',
+    title: 'প্রবীণদের আনন্দ',
+    desc: 'সাথে আছি-র সাথে প্রবীণদের আনন্দের মুহূর্ত — ভিডিওতে দেখুন।',
+    img: 'https://i.ytimg.com/vi/Gf5CT7ZGJoo/maxresdefault.jpg',
+    domain: 'youtube.com ▶' },
+  { url: 'https://www.dw.com/bn/%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%AC%E0%A7%80%E0%A6%A3%E0%A6%A6%E0%A7%87%E0%A6%B0-%E0%A6%B8%E0%A6%B9%E0%A6%BE%E0%A7%9F%E0%A6%A4%E0%A6%BE%E0%A7%9F-%E0%A6%B8%E0%A6%BE%E0%A6%A5%E0%A7%87-%E0%A6%86%E0%A6%9B%E0%A6%BF/video-44584029',
+    title: 'প্রবীণদের সহায়তায় \'সাথে আছি\'',
+    desc: 'পশ্চিমবঙ্গের দুই ব্যক্তি নিজেদের নিশ্চিত উপার্জন ছেড়ে প্রবীণদের সহায়তায় গড়ে তুলেছেন একটি সংস্থা। \'সাথে আছি\' সংস্থাতে তাঁরা ফিরিয়ে আনছেন পুরোনো পাড়া-সংস্কৃতি।',
+    img: 'https://static.dw.com/image/44221998_6.jpg',
+    domain: 'dw.com ▶' }
+];
+
+function renderNews() {
+  const grid = document.getElementById('news-grid');
+  if (!grid) return;
+  grid.innerHTML = articles.map(a => `
+    <a href="${a.url}" target="_blank" class="news-card">
+      <img src="${a.img}" alt="${a.title}">
+      <div class="news-card-body">
+        <h4>${a.title}</h4>
+        <p>${a.desc}</p>
+        <span class="news-card-domain">${a.domain} ↗</span>
+      </div>
+    </a>
+  `).join('');
+}
+renderNews();
+
+// Pricing plans data — edit this array to add/change/remove plans
+const plans = [
+  { name: 'Regular Care (Samparka)', nameBn: 'সম্পর্ক (Samparka)', desc: 'For those who need moderate support', descBn: 'যাদের মাঝারি সহায়তা প্রয়োজন',
+    pricing: { monthly: 5000, yearly: 60000, yearlySingle: 60000, yearlyCouple: 72000, monthlySingle: 5000, monthlyCouple: 7000, mode: 'Monthly/Yearly', deposit: 'Single: ₹30,000 / Couple: ₹50,000' },
+    popular: true,
+    features: [
+      { text: 'Monthly 2 phone calls & 2 companionship visits', included: true },
+      { text: 'Monthly 2 vital check-ups (BP, random blood sugar, weight)', included: true },
+      { text: '24/7 hospitalization support with ambulance & care manager', included: true },
+      { text: 'Medical insurance coordination', included: true },
+      { text: 'Hospital visit (on request)', included: true },
+      { text: 'Support during discharge', included: true },
+      { text: 'Maintaining medical history & reports', included: true },
+      { text: 'Post-hospitalization set up at home', included: true },
+      { text: 'Complete ICU set up can also be done', included: true },
+      { text: 'Procurement of medicines', included: true },
+      { text: 'Support during doctor visit', included: true },
+      { text: 'Doctor on call', included: true },
+      { text: 'Onboarding to existing WhatsApp group', included: true },
+      { text: 'Customised WhatsApp group for family in emergency', included: true },
+      { text: 'Weekly bazar', included: true },
+      { text: 'Monthly groceries', included: true },
+      { text: 'Support during banking & other official requirements', included: true },
+      { text: 'Assistance for lab tests', included: true },
+      { text: 'Medical report collection', included: true },
+      { text: 'Arranging aya, nurse, physiotherapist, dementia experts etc.', included: true },
+      { text: 'Social activities like picnic, tours etc.', included: true },
+      { text: 'Online wellness sessions (Monthly 4)', included: true },
+      { text: 'Arranging cars, train and air tickets', included: true },
+      { text: 'Extra service charges applicable on Sundays & Holidays', included: true }
+    ] },
+  { name: 'Complete Care (Bhorsa)', nameBn: 'ভরসা (Bhorsa)', desc: 'For those who need intense support', descBn: 'যাদের নিবিড় সহায়তা প্রয়োজন',
+    pricing: { monthly: 13000, yearly: 156000, yearlySingle: 156000, yearlyCouple: 192000, monthlySingle: 13000, monthlyCouple: 16000, mode: 'Monthly/Yearly', deposit: 'Single: ₹40,000 / Couple: ₹60,000' },
+    popular: false,
+    features: [
+      { text: 'Monthly 8 phone calls & 14 visits (8 Companionship + 6 Technical)', included: true, bold: true },
+      { text: 'Monthly 8 vital check-ups (BP, random blood sugar, weight)', included: true, bold: true },
+      { text: 'Doctor on call (monthly 1 complimentary)', included: true, bold: true },
+      { text: 'Customised WhatsApp group for family', included: true, bold: true },
+      { text: 'Assistance for lab tests (monthly ₹1,000 lab test credit in your Sathe Achi wallet)', included: true, bold: true },
+      { text: 'Arranging and monitoring aya, nurse, physiotherapist, dementia experts etc.', included: true, bold: true },
+      { text: 'No extra service charges on Sundays and Holidays', included: true, bold: true },
+      { text: 'Household vendor coordination (plumber, electrician etc.)', included: true, bold: true },
+      { text: '50% discount on all service charges', included: true, bold: true },
+      { text: 'Birthdays or special day celebration', included: true, bold: true },
+      { text: 'Day trip companionship in and around Kolkata', included: true, bold: true },
+      { text: '24/7 hospitalization support with ambulance & care manager', included: true },
+      { text: 'Medical insurance coordination', included: true },
+      { text: 'Hospital visit (on request)', included: true },
+      { text: 'Support during discharge', included: true },
+      { text: 'Maintaining medical history & reports', included: true },
+      { text: 'Post-hospitalization set up at home', included: true },
+      { text: 'Complete ICU set up can also be done', included: true },
+      { text: 'Procurement and arranging medicines', included: true },
+      { text: 'Support during doctor visit', included: true },
+      { text: 'Onboarding to existing WhatsApp group', included: true },
+      { text: 'Weekly bazar', included: true },
+      { text: 'Monthly groceries', included: true },
+      { text: 'Support during banking & other official requirements', included: true },
+      { text: 'Medical report collection', included: true },
+      { text: 'Social activities like picnic, tours etc.', included: true },
+      { text: 'Online wellness sessions (Monthly 4)', included: true },
+      { text: 'Arranging cars, train and air tickets', included: true }
+    ] },
+  { name: 'Short Term Care (Nirbhar)', nameBn: 'নির্ভর (Nirbhar)', desc: '7-15 days for short absence of family members', descBn: 'পরিবারের সদস্যদের স্বল্পকালীন অনুপস্থিতির জন্য ৭-১৫ দিন',
+    pricing: { daily: 1000, mode: 'One Time', deposit: 'None' },
+    popular: false,
+    features: [
+      { text: 'Daily phone calls during the plan', included: true },
+      { text: 'Daily visits during the plan', included: true },
+      { text: 'Covers everything during the plan period', included: true },
+      { text: '24/7 hospitalization support', included: true },
+    ] }
+];
+
+let pricingMode = 'monthly';
+
+function renderPlans() {
+  const grid = document.getElementById('pricing-grid');
+  if (!grid) return;
+  const lang = document.documentElement.lang;
+
+  grid.innerHTML = plans.map(p => {
+    // Determine price display
+    let priceDisplay, periodText;
+    if (p.pricing.daily) {
+      priceDisplay = p.pricing.daily;
+      periodText = lang === 'bn' ? '/দিন' : '/day';
+    } else if (pricingMode === 'yearly' && p.pricing.yearly) {
+      priceDisplay = Math.round(p.pricing.monthlySingle ? p.pricing.monthlySingle * 0.95 : p.pricing.yearlySingle / 12);
+      periodText = lang === 'bn' ? '/মাস' : '/month';
+    } else if (p.pricing.monthly) {
+      priceDisplay = p.pricing.monthlySingle || p.pricing.monthly;
+      periodText = lang === 'bn' ? '/মাস' : '/month';
+    } else {
+      priceDisplay = Math.round(p.pricing.monthlySingle ? p.pricing.monthlySingle * 0.95 : p.pricing.yearlySingle / 12);
+      periodText = lang === 'bn' ? '/মাস' : '/month';
+    }
+
+    const btnClass = p.popular ? 'btn-primary' : 'btn-outline';
+    const couplePrice = pricingMode === 'yearly' && p.pricing.yearlyCouple 
+      ? Math.round(p.pricing.yearlyCouple * 0.95 / 12)
+      : (p.pricing.monthlyCouple || (p.pricing.yearlyCouple ? Math.round(p.pricing.yearlyCouple / 12) : null));
+    const yearlyTotal = pricingMode === 'yearly' && !p.pricing.daily ? Math.round(priceDisplay * 12) : null;
+    const couplYearlyTotal = pricingMode === 'yearly' && couplePrice && !p.pricing.daily ? Math.round(couplePrice * 12) : null;
+
+    return `
+      <div class="price-card ${p.popular ? 'popular' : ''}">
+        ${p.popular ? `<div class="popular-badge">${lang === 'bn' ? 'সবচেয়ে জনপ্রিয়' : 'Most Popular'}</div>` : ''}
+        <div class="price-header">
+          <h3>${lang === 'bn' ? p.nameBn : p.name}</h3>
+          <p>${lang === 'bn' ? p.descBn : p.desc}</p>
+        </div>
+        <div class="price-amount">
+          <span class="currency">₹</span><span class="amount">${priceDisplay.toLocaleString('en-IN')}</span><span class="period">${periodText}</span>
+        </div>
+        ${yearlyTotal ? `<div class="yearly-total">${lang === 'bn' ? 'বার্ষিক মোট' : 'Annual total'}: ₹${yearlyTotal.toLocaleString('en-IN')}</div>` : ''}
+        ${couplePrice && !p.pricing.daily ? `<div class="couple-price">${lang === 'bn' ? 'দম্পতি' : 'Couple'}: ₹${couplePrice.toLocaleString('en-IN')}${periodText}${couplYearlyTotal ? ` (₹${couplYearlyTotal.toLocaleString('en-IN')}/yr)` : ''}</div>` : ''}
+        ${p.pricing.deposit && p.pricing.deposit !== 'None' ? `<div class="deposit-info">${lang === 'bn' ? 'জামানত' : 'Deposit'}: ${p.pricing.deposit}</div>` : ''}
+        <ul class="price-features">
+          ${p.features.slice(0,11).map(f => `<li class="${f.included ? 'included' : 'excluded'}">${f.bold ? '<strong>' + f.text + '</strong>' : f.text}</li>`).join('')}
+          ${p.features.length > 11 ? `<li class="features-more" onclick="this.parentElement.classList.toggle('expanded');this.textContent=this.parentElement.classList.contains('expanded')?'Show less ▴':'+ ${p.features.length - 11} more features ▾'">+ ${p.features.length - 11} more features ▾</li>` : ''}
+          ${p.features.slice(11).map(f => `<li class="hidden-feature ${f.included ? 'included' : 'excluded'}">${f.bold ? '<strong>' + f.text + '</strong>' : f.text}</li>`).join('')}
+        </ul>
+        <a href="#subscribe" class="btn ${btnClass} btn-block" onclick="openSubscribe('${p.name}')">${lang === 'bn' ? 'শুরু করুন' : 'Get Started'}</a>
+      </div>`;
+  }).join('');
+}
+
+// Pricing toggle
+function togglePricing(type) {
+  pricingMode = type;
+  document.querySelectorAll('.toggle-btn').forEach((b, i) => {
+    b.classList.toggle('active', (type === 'monthly' && i === 0) || (type === 'yearly' && i === 1));
+  });
+  renderPlans();
+}
+
+// Initial render
+renderPlans();
+
+// Subscribe modal
+function openSubscribe(plan) {
+  document.getElementById('plan-name').textContent = plan;
+  document.getElementById('subscribe-modal').classList.add('active');
+}
+
+function handleSubscribe(e) {
+  e.preventDefault();
+  const f = e.target;
+  const name = f.elements[0].value;
+  const phone = f.elements[1].value;
+  const elder = f.elements[2].value;
+  const address = f.elements[3].value;
+  const health = f.elements[4].value;
+  const plan = document.getElementById('plan-name').textContent;
+  const text = encodeURIComponent('Hi Sathe Achi,\n\nNew Subscription Enquiry:\nPlan: ' + plan + '\nName: ' + name + '\nPhone: ' + phone + '\nElder\'s Name: ' + elder + '\nAddress: ' + address + '\nHealth Condition: ' + health);
+  document.getElementById('subscribe-modal').classList.remove('active');
+  if(typeof gtag==='function')gtag('event','whatsapp_form_submit',{event_category:'conversion',event_label:'contact_form'});window.open('https://wa.me/917044063399?text='+text,'_blank');
+  f.reset();
+}
+
+// Language toggle
+let currentLang = 'en';
+function switchLang(lang) {
+  currentLang = lang;
+  document.querySelectorAll('.lang-switch button').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('[data-bn]').forEach(el => {
+    if (lang === 'bn') {
+      if (!el.dataset.en) el.dataset.en = el.textContent;
+      el.textContent = el.dataset.bn;
+    } else {
+      if (el.dataset.en) el.textContent = el.dataset.en;
+    }
+  });
+  document.documentElement.lang = lang === 'bn' ? 'bn' : 'en';
+  // Re-render dynamic sections
+  renderPlans();
+  renderNews();
+  // Update active button
+  document.querySelectorAll('.lang-switch button').forEach(b => {
+    if ((lang === 'bn' && b.textContent.includes('বাংলা')) || (lang === 'en' && b.textContent.includes('English')))
+      b.classList.add('active');
+  });
+}
+
+function handleContact(e) {
+  e.preventDefault();
+  const f = e.target;
+  const name = f.elements[0].value;
+  const phone = f.elements[1].value;
+  const email = f.elements[2].value;
+  const interest = f.elements[3].value;
+  const msg = f.elements[4].value;
+  const text = encodeURIComponent('Hi Sathe Achi,\n\nName: ' + name + '\nPhone: ' + phone + '\nEmail: ' + email + '\nInterested in: ' + interest + '\n\nMessage: ' + msg);
+  if(typeof gtag==='function')gtag('event','whatsapp_form_submit',{event_category:'conversion',event_label:'contact_form'});window.open('https://wa.me/917044063399?text='+text,'_blank');
+  f.reset();
+}
+
+// Close modals on overlay click
+document.querySelectorAll('.modal-overlay').forEach(m => {
+  m.addEventListener('click', e => { if (e.target === m) m.classList.remove('active'); });
+});
+
+// Chatbot
+const botKnowledge = {
+  about: 'Sathe Achi is an elder care management service based in Barasat, Kolkata, operating since 2014. The concept of \'Para Culture\' is almost gone — the days when young guys from the locality were always there to help elders. Young people leaving their family behind are anxious about their parents at home. Here the concept of SATHE ACHI emerges. We are here to support elders for their medical and non-medical needs. Like a faithful hand and anchored soul.',
+  contact: 'Phone: +91-7044063399\nEmail: care@satheachi.in\nOffice: Barasat, Kolkata - 700124\nHours: 9 AM–7 PM (Emergency: 24/7)',
+  plans: `We have 3 plans:\n\n1. Regular Care (Samparka) - ₹5,000/month (single), ₹7,000/month (couple). 2 visits/month, medical coordination, weekly bazaar, banking help. Deposit: ₹30,000 single / ₹50,000 couple.\n\n2. Complete Care (Bhorsa) - ₹13,000/month (single), ₹16,000/month (couple). 14 visits/month, daily support, lab credits, no holiday charges. Deposit: ₹40,000 single / ₹60,000 couple.\n\n3. Short Term Care (Nirbhar) - ₹1,000/day for 7-15 days. Daily visits and calls, full coverage. One-time payment, no deposit.\n\n5% discount on yearly subscriptions.`,
+  services: 'Our services include: Emergency Hospitalization, Doctor Consultation, Lab Test, Companionship, Banking Assistance, Medication Management, Weekly Bazaar, and Indoor/Outdoor Activities.',
+  emergency: 'Call us anytime at +91-7044063399. We provide 24/7 hospitalization support with ambulance and caregivers. All plans include emergency coverage.',
+  area: 'We currently serve Barasat and surrounding areas within Kolkata (PIN 700124 and nearby). We are expanding to South Kolkata soon.',
+  deposit: 'Regular Care: ₹30,000 (single) / ₹50,000 (couple)\nComplete Care: ₹40,000 (single) / ₹60,000 (couple)\nEmergency & Short Term: No deposit required.\nAll deposits are refundable.',
+  social: 'Follow us:\nFacebook: facebook.com/people/Sathe-Achi/100067684187281\nInstagram: @satheachii\nYouTube & DW have featured us!',
+  customize: 'Yes! All plans can be customised. Third-party services (doctor, nurse, physiotherapist) are at actual price. Medical assistance: ₹200/hour. Non-medical activities: ₹200 per task.'
+};
+
+const botReplies = [
+  { keywords: ['price','cost','plan','package','fee','charge','how much','kitna','dam','মূল্য','দাম'], answer: botKnowledge.plans },
+  { keywords: ['emergency','urgent','hospital','ambulance','জরুরি'], answer: botKnowledge.emergency },
+  { keywords: ['service','what do you','offer','provide','সেবা','কি কি'], answer: botKnowledge.services },
+  { keywords: ['contact','phone','call','number','email','ফোন','যোগাযোগ'], answer: botKnowledge.contact },
+  { keywords: ['area','location','where','address','barasat','kolkata','কোথায়','এলাকা'], answer: botKnowledge.area },
+  { keywords: ['deposit','refund','জামানত'], answer: botKnowledge.deposit },
+  { keywords: ['about','who','history','since','কে','সম্পর্কে'], answer: botKnowledge.about },
+  { keywords: ['facebook','instagram','social','youtube','ফেসবুক'], answer: botKnowledge.social },
+  { keywords: ['custom','change','modify','কাস্টম','পরিবর্তন'], answer: botKnowledge.customize },
+  { keywords: ['couple','দম্পতি','two','both'], answer: 'Couple pricing:\n• Regular Care: ₹7,000/month or ₹72,000/year\n• Complete Care: ₹16,000/month or ₹1,92,000/year\nDeposit: Regular ₹50k, Complete ₹60k (refundable)' },
+  { keywords: ['short term','nirbhar','নির্ভর','7 day','15 day','temporary'], answer: 'Short Term Care (Nirbhar): ₹1,000/day for 7-15 days. Includes daily phone calls, daily visits, 24/7 hospitalization support. Ideal when family is traveling or for post-surgery recovery.' },
+  { keywords: ['companion','lonely','alone','একা','সঙ্গ','সঙ্গী'], answer: 'Our companionship service provides trained companions for conversation, walks, reading, and emotional support. Regular Care includes 2 companion visits/month. Complete Care includes 8 companion + 6 technical visits/month.' },
+  { keywords: ['doctor','medical','health','ডাক্তার','চিকিৎসা'], answer: 'We provide in-home doctor consultations and virtual consultations accessible for family members abroad or in other parts of India, support during chemotherapy/dialysis, medicine procurement, medical equipment arrangement, and vital check-ups (BP, sugar, weight). Available in Regular and Complete Care plans.' },
+  { keywords: ['bazaar','grocery','shopping','বাজার','কেনাকাটা'], answer: 'Weekly bazaar and monthly grocery shopping is included in Regular and Complete Care plans. We shop based on preferences and provide receipts for every purchase.' },
+  { keywords: ['banking','bank','pension','official','ব্যাংক','পেনশন'], answer: 'Banking assistance includes: bank visits, bill payments, pension collection, and government document work. Available in Regular and Complete Care plans. Non-medical activities charged at ₹200 per task for Emergency plan members.' },
+];
+
+function getBotReply(msg) {
+  const lower = msg.toLowerCase();
+  for (const r of botReplies) {
+    if (r.keywords.some(k => lower.includes(k))) return r.answer;
+  }
+  return "I'm not sure about that. You can:\n• Ask about our plans & pricing\n• Ask about services\n• Ask about our service area\n\nOr chat with our team directly on WhatsApp! 💬";
+}
+
+const quickOptions = [
+  { label: '💰 Plans & Pricing', msg: 'What are your plans and pricing?' },
+  { label: '🏥 Services', msg: 'What services do you offer?' },
+  { label: '📍 Service Area', msg: 'What areas do you serve?' },
+  { label: '📞 Contact', msg: 'How can I contact you?' },
+  { label: '👫 Couple Pricing', msg: 'What is the couple pricing?' },
+  { label: '⏱️ Short Term', msg: 'Tell me about short term care' },
+];
+
+let chatOpen = false;
+function toggleChat() {
+  chatOpen = !chatOpen;
+  document.getElementById('chat-widget').classList.toggle('open', chatOpen);
+  if (chatOpen && document.getElementById('chat-messages').children.length === 0) {
+    addBotMsg("Hi! 👋 I'm Sohini, your Sathe Achi assistant. How can I help you today?");
+    showQuickOptions();
+  }
+}
+
+function addBotMsg(text) {
+  const div = document.createElement('div');
+  div.className = 'chat-msg bot';
+  div.textContent = text;
+  document.getElementById('chat-messages').appendChild(div);
+  scrollChat();
+}
+
+function addUserMsg(text) {
+  const div = document.createElement('div');
+  div.className = 'chat-msg user';
+  div.textContent = text;
+  document.getElementById('chat-messages').appendChild(div);
+  scrollChat();
+}
+
+function showQuickOptions() {
+  const div = document.createElement('div');
+  div.className = 'chat-quick';
+  div.innerHTML = quickOptions.map(o => `<button onclick="handleQuick('${o.msg}')">${o.label}</button>`).join('');
+  document.getElementById('chat-messages').appendChild(div);
+  scrollChat();
+}
+
+function handleQuick(msg) {
+  document.querySelectorAll('.chat-quick').forEach(e => e.remove());
+  addUserMsg(msg);
+  setTimeout(() => { addBotMsg(getBotReply(msg)); showQuickOptions(); }, 300);
+}
+
+function handleChatSend() {
+  const input = document.getElementById('chat-input');
+  const msg = input.value.trim();
+  if (!msg) return;
+  input.value = '';
+  document.querySelectorAll('.chat-quick').forEach(e => e.remove());
+  addUserMsg(msg);
+  setTimeout(() => { addBotMsg(getBotReply(msg)); showQuickOptions(); }, 300);
+}
+
+function scrollChat() {
+  const el = document.getElementById('chat-messages');
+  el.scrollTop = el.scrollHeight;
+}
+
+// Show nudge after 5 seconds
+setTimeout(() => {
+  if (!chatOpen) document.getElementById('chat-nudge').classList.add('visible');
+}, 5000);
+
+// Hero slideshow
+let slideIndex = 0;
+const slides = document.querySelectorAll('.hero-slide');
+if (slides.length > 1) {
+  setInterval(() => {
+    slides[slideIndex].classList.remove('active');
+    slideIndex = (slideIndex + 1) % slides.length;
+    slides[slideIndex].classList.add('active');
+  }, 5000);
+}
+
+// Track WhatsApp clicks
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[href*="wa.me"], .social-float.wa');
+  if (link && typeof gtag === 'function') {
+    gtag('event', 'whatsapp_click', { event_category: 'engagement', event_label: link.getAttribute('aria-label') || 'whatsapp' });
+  }
+});
+
+// Back to top
+window.addEventListener('scroll', () => {
+  document.getElementById('backToTop').classList.toggle('visible', window.scrollY > 600);
+  // Close hamburger menu on scroll
+  document.getElementById('nav').classList.remove('open');
+});
+
+</script>
+</body>
+</html>
+

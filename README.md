@@ -1,9 +1,11 @@
-# Sathe Achi — Website (GitHub Pages)
+# Sathe Achi — Showcase Website (GitHub Pages)
 
-Production-quality site ported from [satheachi.co.in](https://satheachi.co.in) with **full pricing**, **27 real photos** in `resources/`, NRI Facebook spotlight, news, Google review screenshots, and Sohini chatbot.
+**Custom editorial UI** for founder presentations — not a clone of [satheachi.co.in](https://satheachi.co.in).  
+Built with `css/design.css` + `js/app.js` (Fraunces/DM Sans, bento layout, live Care Sathi card, full pricing toggle).
 
-**Live:** https://pratim-easyq2c.github.io/satheachi/  
-**Brochure (3-page PDF):** https://pratim-easyq2c.github.io/satheachi/brochure/
+**Live:** https://pratim-easyq2c.github.io/satheachi/ *(updates after push)*  
+**Brochure (3-page PDF):** https://pratim-easyq2c.github.io/satheachi/brochure/  
+**Legacy copy (reference):** `legacy-satheachi-co-in-copy.html` — the previous near-duplicate of production.
 
 ## Pricing (official)
 
