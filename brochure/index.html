@@ -3,171 +3,151 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sathe Achi — Brochure (Print / PDF)</title>
+  <title>Sathe Achi — Brochure 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="brochure.css" />
 </head>
 <body>
   <div class="toolbar no-print">
-    <a href="../index.html" class="toolbar__back">← Website</a>
-    <span class="toolbar__title">Sathe Achi Brochure</span>
-    <button type="button" class="toolbar__btn" onclick="window.print()">Print / Save PDF</button>
+    <a href="../index.html">← Website</a>
+    <strong>Sathe Achi Brochure</strong>
+    <button type="button" onclick="window.print()">Print / Save PDF</button>
   </div>
+  <p class="hint no-print">A4 Portrait · Margins: None · Background graphics: ON · Double-sided for best result</p>
 
-  <p class="toolbar-hint no-print">Tip: In print dialog, choose <strong>A4</strong>, <strong>Portrait</strong>, margins <strong>None</strong>, and enable <strong>Background graphics</strong>.</p>
-
-  <!-- ═══════════ PAGE 1 — FRONT COVER ═══════════ -->
-  <section class="sheet sheet--cover" aria-label="Brochure front cover">
-    <div class="frame frame--outer">
-      <div class="frame frame--inner">
-        <header class="cover__header">
-          <div class="brand">
-            <svg class="brand__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-              <path d="M24 8 L40 22 V38 H8 V22 Z" stroke="#c9a84c" stroke-width="1.5" fill="none"/>
-              <rect x="19" y="24" width="10" height="11" rx="1.5" fill="#c45c3e"/>
-            </svg>
-            <div>
-              <p class="brand__since">Since 2013</p>
-              <h1 class="brand__name">SATHE ACHI</h1>
-              <p class="brand__bn" lang="bn">সাথে আছি</p>
-            </div>
-          </div>
-          <p class="cover__badge">11+ Years · 500+ Families</p>
-        </header>
-
-        <div class="cover__hero">
-          <div class="cover__photo" role="img" aria-label="Caregiver supporting an elderly person">
-            <svg class="cover__photo-art" viewBox="0 0 200 200" fill="none" aria-hidden="true">
-              <circle cx="100" cy="100" r="95" stroke="#c9a84c" stroke-width="1" opacity="0.4"/>
-              <ellipse cx="100" cy="175" rx="70" ry="12" fill="#0c1f3f" opacity="0.15"/>
-              <path d="M55 130 Q70 90 100 85 Q130 90 145 130" stroke="#0c1f3f" stroke-width="2" fill="none" opacity="0.3"/>
-              <circle cx="78" cy="72" r="14" fill="#e8d5c4"/>
-              <path d="M65 95 Q78 88 92 95 L95 130 L62 130 Z" fill="#5a7a9a"/>
-              <circle cx="122" cy="68" r="16" fill="#f0e0d0"/>
-              <path d="M108 92 Q122 85 138 94 L142 145 L98 145 L100 115 Q108 108 122 112" fill="#c9a84c" opacity="0.85"/>
-              <path d="M98 118 L122 112" stroke="#0c1f3f" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="cover__headline">
-            <h2>Parents Deserve Care,<br><em>Even When You're Away</em></h2>
-            <p class="cover__sub">Expert elder care at home · Barasat &amp; North Kolkata</p>
-          </div>
-        </div>
-
-        <ul class="pillars" role="list">
-          <li>
-            <span class="pillars__check" aria-hidden="true">✓</span>
-            Trained &amp; Verified Caregivers
-          </li>
-          <li>
-            <span class="pillars__check" aria-hidden="true">✓</span>
-            24/7 Emergency Support
-          </li>
-          <li>
-            <span class="pillars__check" aria-hidden="true">✓</span>
-            Personalised Care Plans
-          </li>
-          <li>
-            <span class="pillars__check" aria-hidden="true">✓</span>
-            Holistic Care — Medical &amp; Daily Needs
-          </li>
-        </ul>
-
-        <footer class="cover__footer">
-          <div class="cover__contact">
-            <strong>+91 70440 63399</strong>
-            <span>satheachi.co.in</span>
-          </div>
-          <p class="cover__area">Serving Kolkata &amp; Surrounding Areas</p>
-        </footer>
-      </div>
+  <!-- PAGE 1 — COVER -->
+  <section class="page page-cover">
+    <div class="cover-top">
+      <img src="../resources/Logo-1-300x157.png" alt="Sathe Achi" class="logo" />
+      <p class="since">Since 2013 · Trusted by 500+ families</p>
     </div>
-    <div class="sheet__accent" aria-hidden="true"></div>
+    <div class="cover-photo-wrap">
+      <img src="../resources/brochure-cover.jpeg" alt="Sathe Achi caregiver supporting a senior" class="cover-photo" />
+    </div>
+    <h1>Parents deserve care —<br><span>even when you're far away</span></h1>
+    <p class="cover-lead">Elder care at home in Barasat &amp; North Kolkata · Medical + daily living · One subscription</p>
+    <ul class="cover-pills">
+      <li>24/7 emergency</li>
+      <li>Verified caregivers</li>
+      <li>Teleconsult for NRIs</li>
+      <li>72hr deposit refund</li>
+    </ul>
+    <footer class="cover-foot">
+      <span><strong>+91 70440 63399</strong></span>
+      <span>satheachi.co.in · care@satheachi.in</span>
+    </footer>
   </section>
 
-  <!-- ═══════════ PAGE 2 — INSIDE SPREAD ═══════════ -->
-  <section class="sheet sheet--inside" aria-label="Brochure inside content">
-    <div class="inside__grid">
-      <article class="inside__col inside__story">
-        <p class="label">Our story</p>
-        <h2>The <em>parar chele</em> spirit — professionally</h2>
-        <p class="lead">When children move away, who helps your parents at 2 AM? Who runs to the bank, the bazar, the hospital?</p>
-        <p><strong>Sathe Achi</strong> is that faithful presence — trained, accountable, and always reachable. We don't replace family. We support you.</p>
+  <!-- PAGE 2 — PRICING -->
+  <section class="page page-pricing">
+    <header class="page-head">
+      <h2>Transparent pricing</h2>
+      <p>Monthly or yearly (5% off yearly) · Plans customisable · No hidden charges</p>
+    </header>
 
-        <div class="care-sathi">
-          <p class="care-sathi__label">Introducing</p>
-          <h3>Your Care Sathi</h3>
-          <p>One dedicated coordinator who knows your parents, sends you updates, and owns every emergency.</p>
+    <div class="plan-grid">
+      <article class="plan-card popular">
+        <span class="ribbon">Most popular</span>
+        <h3>Regular Care <small>(Samparka)</small></h3>
+        <p class="plan-desc">Moderate support — safety net for independent seniors</p>
+        <div class="price-row">
+          <div><span class="amt">₹5,000</span><span class="per">/mo single</span></div>
+          <div class="sub">Couple ₹7,000/mo · Yearly from ₹60,000</div>
         </div>
-
-        <ul class="trust-row" role="list">
-          <li><strong>24/7</strong>Emergency</li>
-          <li><strong>72hr</strong>Refund</li>
-          <li><strong>5%</strong>Yearly off</li>
+        <p class="deposit">Deposit: ₹30,000 single / ₹50,000 couple (refundable)</p>
+        <ul class="feat-compact">
+          <li>2 phone calls + 2 companion visits / month</li>
+          <li>2 vital check-ups / month</li>
+          <li>24/7 hospitalisation + ambulance</li>
+          <li>Weekly bazar, banking, lab assistance</li>
         </ul>
       </article>
 
-      <article class="inside__col inside__services">
-        <p class="label">Complete care</p>
-        <h2>One subscription.<br>Every need covered.</h2>
-
-        <div class="service-grid">
-          <div class="service"><span>🚨</span><div><strong>Emergency Hospitalization</strong><small>In all plans</small></div></div>
-          <div class="service"><span>🩺</span><div><strong>Doctor Consultation</strong><small>Teleconsult for family abroad</small></div></div>
-          <div class="service"><span>🧪</span><div><strong>Lab Tests</strong><small>Home sample collection</small></div></div>
-          <div class="service"><span>💬</span><div><strong>Companionship</strong><small>Adda, walks, outings</small></div></div>
-          <div class="service"><span>🏦</span><div><strong>Banking &amp; Paperwork</strong><small>Bills, pension, documents</small></div></div>
-          <div class="service"><span>💊</span><div><strong>Medication Mgmt</strong><small>Pharmacy coordination</small></div></div>
-          <div class="service"><span>🛒</span><div><strong>Weekly Bazaar</strong><small>Groceries &amp; supplies</small></div></div>
-          <div class="service"><span>🎉</span><div><strong>Activities</strong><small>Events, picnics, wellness</small></div></div>
+      <article class="plan-card">
+        <h3>Complete Care <small>(Bhorsa)</small></h3>
+        <p class="plan-desc">Intensive support — daily help &amp; peace of mind</p>
+        <div class="price-row">
+          <div><span class="amt">₹13,000</span><span class="per">/mo single</span></div>
+          <div class="sub">Couple ₹16,000/mo · Yearly from ₹1,56,000</div>
         </div>
+        <p class="deposit">Deposit: ₹40,000 single / ₹60,000 couple (refundable)</p>
+        <ul class="feat-compact">
+          <li>8 calls + 14 visits / month (8 companion + 6 technical)</li>
+          <li>₹1,000/mo lab test wallet credit</li>
+          <li>1 complimentary doctor-on-call / month</li>
+          <li>No Sunday/holiday surcharges · 50% off add-ons</li>
+        </ul>
+      </article>
+
+      <article class="plan-card">
+        <h3>Short Term <small>(Nirbhar)</small></h3>
+        <p class="plan-desc">7–15 days when family travels or during recovery</p>
+        <div class="price-row">
+          <div><span class="amt">₹1,000</span><span class="per">/day</span></div>
+          <div class="sub">One-time payment · No deposit</div>
+        </div>
+        <ul class="feat-compact">
+          <li>Daily calls &amp; daily visits</li>
+          <li>Full coverage during plan period</li>
+          <li>24/7 hospitalisation support</li>
+        </ul>
       </article>
     </div>
 
-    <div class="inside__bottom">
-      <div class="plans">
-        <p class="label">Care plans</p>
-        <div class="plans__row">
-          <div class="plan">
-            <h4>Regular Care</h4>
-            <p>Essential safety net for independent seniors</p>
-          </div>
-          <div class="plan plan--featured">
-            <h4>Complete Care</h4>
-            <p>Full medical + daily living support</p>
-          </div>
-          <div class="plan">
-            <h4>Short Term</h4>
-            <p>Flexible weeks — travel &amp; recovery</p>
-          </div>
-        </div>
-        <p class="plans__note">Add-ons: ₹200/hr medical · ₹200 errands · Specialists at actual cost · Customisable monthly/yearly</p>
+    <aside class="addons">
+      <h4>Add-ons &amp; notes</h4>
+      <div class="addon-grid">
+        <span><strong>₹200/hr</strong> medical assistance (per person)</span>
+        <span><strong>₹200</strong> non-medical errands (bazar, official work)</span>
+        <span><strong>At cost</strong> nurse, physio, dementia expert, aya</span>
+        <span><strong>72 hours</strong> deposit refund if discontinued</span>
       </div>
+    </aside>
 
-      <div class="cta-block">
-        <div class="cta-block__text">
-          <p class="label">Get started</p>
-          <h3>Call for a free home visit</h3>
-          <p class="cta-phone">+91 <strong>70440 63399</strong></p>
-          <p class="cta-email">care@satheachi.in</p>
-          <p class="cta-address">Barasat, Kolkata — 700124<br>Office 10 AM – 7 PM · Emergency 24/7</p>
-        </div>
-        <div class="cta-block__qr">
-          <img
-            src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&amp;data=https://pratim-easyq2c.github.io/satheachi/&amp;bgcolor=faf6ef&amp;color=0c1f3f&amp;margin=8"
-            width="120"
-            height="120"
-            alt="QR code — visit Sathe Achi website"
-          />
-          <span>Scan for website &amp; plans</span>
-          <a href="https://www.facebook.com/p/Sathe-Achi-100067684187281" class="cta-fb">Follow on Facebook</a>
-        </div>
-      </div>
+    <div class="photo-strip">
+      <img src="../resources/gallery-1.jpg" alt="" /><img src="../resources/gallery-3.jpg" alt="" /><img src="../resources/activities-2.jpg" alt="" />
+    </div>
+  </section>
+
+  <!-- PAGE 3 — SERVICES & CONTACT -->
+  <section class="page page-services">
+    <header class="page-head">
+      <h2>Complete care under one roof</h2>
+      <p>Emergency hospitalisation included in every plan</p>
+    </header>
+
+    <div class="services-grid">
+      <div class="svc"><img src="../resources/emergency-v3.jpg" alt="" /><div><strong>Emergency Hospitalization</strong><span>Ambulance, admission, bedside support</span></div></div>
+      <div class="svc"><img src="../resources/doctor-consultation-v2.jpg" alt="" /><div><strong>Doctor Consultation</strong><span>Home visits + teleconsult for family abroad</span></div></div>
+      <div class="svc"><img src="../resources/pathological-v2.jpg" alt="" /><div><strong>Lab Tests</strong><span>Home sample collection &amp; reports</span></div></div>
+      <div class="svc"><img src="../resources/companionship-new.jpg" alt="" /><div><strong>Companionship</strong><span>Adda, walks, outings, festivals</span></div></div>
+      <div class="svc"><img src="../resources/banking-new.jpg" alt="" /><div><strong>Banking &amp; Paperwork</strong><span>Bills, pension, government documents</span></div></div>
+      <div class="svc"><img src="../resources/medication-v2.jpg" alt="" /><div><strong>Medication Management</strong><span>Pharmacy &amp; prescription tracking</span></div></div>
+      <div class="svc"><img src="../resources/weekly-bazaar-v2.jpg" alt="" /><div><strong>Weekly Bazaar</strong><span>Groceries &amp; household supplies</span></div></div>
+      <div class="svc"><img src="../resources/activities-new.jpg" alt="" /><div><strong>Activities &amp; Wellness</strong><span>Picnics, tours, social groups</span></div></div>
     </div>
 
-    <p class="inside__tagline">সাথে আছি — <em>We are with you</em></p>
+    <div class="story-block">
+      <h3>The <em>parar chele</em> spirit — professionally</h3>
+      <p>When children move away, who answers at 2 AM? Who runs to the hospital, the bank, the bazar? <strong>Sathe Achi</strong> is that faithful presence — trained, accountable, and always reachable. We don't replace family. We support you.</p>
+    </div>
+
+    <div class="contact-row">
+      <div>
+        <h3>Start with a free home visit</h3>
+        <p class="phone">+91 <strong>70440 63399</strong></p>
+        <p>care@satheachi.in</p>
+        <p class="addr">Barasat, Kolkata — 700124<br>Office 10 AM – 7 PM · Emergency 24/7</p>
+        <p class="social">facebook.com/people/Sathe-Achi · @satheachii</p>
+      </div>
+      <div class="qr-block">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=130x130&amp;data=https://pratim-easyq2c.github.io/satheachi/&amp;bgcolor=ffffff&amp;color=1a7a6d" width="110" height="110" alt="QR code" />
+        <span>Scan for plans &amp; website</span>
+      </div>
+    </div>
+    <p class="tagline" lang="bn">সাথে আছি — We are with you</p>
   </section>
 </body>
 </html>
