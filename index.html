@@ -39,27 +39,40 @@
   <main>
     <!-- HERO -->
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero__copy reveal">
-        <p class="eyebrow">Barasat & North Kolkata · Since 2013</p>
-        <h1 id="hero-title">Care that feels like family — <em>even oceans away</em></h1>
-        <p class="hero__lead">One trusted team for midnight emergencies, doctor visits, the weekly bazar, and the adda your parents still deserve.</p>
-        <div class="hero__actions">
+      <div class="hero__copy reveal-stagger">
+        <p class="eyebrow reveal-child">Barasat & North Kolkata · Since 2013</p>
+        <h1 id="hero-title" class="reveal-child">Care that feels like family — <em>even oceans away</em></h1>
+        <p class="hero__lead reveal-child">One trusted team for midnight emergencies, doctor visits, the weekly bazar, and the adda your parents still deserve.</p>
+        <div class="hero__actions reveal-child">
           <a href="#pricing" class="btn btn--primary">See plans from ₹5,000</a>
           <a href="tel:+917044063399" class="btn btn--outline">+91 70440 63399</a>
         </div>
-        <div class="stats-row">
+        <div class="stats-row reveal-child">
           <div><strong>500+</strong><span>Families trust us</span></div>
           <div><strong>24/7</strong><span>Emergency line</span></div>
           <div><strong>72hr</strong><span>Deposit refund</span></div>
         </div>
-        <aside class="care-feed reveal" aria-label="What family abroad sees">
+        <aside class="care-feed reveal-child" aria-label="What family abroad sees">
           <p class="care-feed__label">Your Care Sathi</p>
           <h2 class="care-feed__title">What family abroad sees</h2>
-          <ul class="care-feed__list" id="care-feed-list"></ul>
+          <ul class="care-feed__list" id="care-feed-list">
+            <li class="care-feed__item is-live">
+              <span class="care-feed__dot" aria-hidden="true"></span>
+              <div><strong>Doctor visit complete</strong><small>Report sent · 6:42 PM Kolkata</small></div>
+            </li>
+            <li class="care-feed__item">
+              <span class="care-feed__dot" aria-hidden="true"></span>
+              <div><strong>Bazaar run done</strong><small>Fresh fish &amp; vegetables delivered</small></div>
+            </li>
+            <li class="care-feed__item">
+              <span class="care-feed__dot" aria-hidden="true"></span>
+              <div><strong>Evening adda</strong><small>45 min companionship walk</small></div>
+            </li>
+          </ul>
         </aside>
       </div>
       <div class="hero__visual">
-        <div class="hero__slides" aria-hidden="true">
+        <div class="hero__slides reveal reveal--scale reveal--slow" aria-hidden="true" data-parallax="0.14">
           <img class="hero__slide is-active" src="resources/companionship-new.jpg" alt="" />
           <img class="hero__slide" src="resources/activities-3.jpg" alt="" />
           <img class="hero__slide" src="resources/gallery-3.jpg" alt="" />
@@ -72,23 +85,23 @@
     </div>
 
     <!-- STORY -->
-    <section class="section" id="story">
+    <section class="section scroll-section" id="story">
       <div class="container story-grid">
-        <div class="reveal">
+        <div class="reveal reveal--left reveal--slow">
           <p class="eyebrow">The para spirit, professionally</p>
           <h2 class="section-title">Remember when the <em>parar chele</em> would show up?</h2>
           <p class="section-lead">Twenty years ago, a shout across the lane was enough. That culture faded — but the need never did. Sathe Achi brings that faithful presence back: trained, accountable, always reachable.</p>
           <blockquote>We don't replace you. We support you — so every call home can be about love, not logistics.</blockquote>
         </div>
-        <div class="story-visual reveal">
-          <img src="resources/brochure-cover.jpeg" alt="Sathe Achi caregiver with a senior member" />
+        <div class="story-visual reveal reveal--right reveal--slow">
+          <img src="resources/brochure-cover.jpeg" alt="Sathe Achi caregiver with a senior member" data-parallax="0.12" />
           <div class="story-visual__badge">🏠 Home, not institution — Barasat & surrounding areas</div>
         </div>
       </div>
     </section>
 
     <!-- SERVICES bento -->
-    <section class="section section--alt" id="services">
+    <section class="section section--alt scroll-section" id="services">
       <div class="container">
         <header class="section-head section-head--center reveal">
           <p class="eyebrow">Complete care</p>
@@ -100,7 +113,7 @@
     </section>
 
     <!-- NRI -->
-    <section class="section section--dark" id="nri">
+    <section class="section section--dark scroll-section" id="nri">
       <div class="container nri-band">
         <a class="nri-band__media reveal" href="https://www.facebook.com/watch/?v=1480978579833340" target="_blank" rel="noopener">
           <img src="resources/WhatsApp-Image-2024-12-01-at-1.47.30-PM-2-400x532.jpeg" alt="Sathe Achi care moment" />
@@ -122,7 +135,7 @@
     </section>
 
     <!-- PRICING -->
-    <section class="section" id="pricing">
+    <section class="section scroll-section" id="pricing">
       <div class="container">
         <header class="section-head section-head--center reveal">
           <p class="eyebrow">Transparent pricing</p>
@@ -144,7 +157,7 @@
     </section>
 
     <!-- NEWS & PRESS -->
-    <section class="section section--alt" id="press">
+    <section class="section section--alt scroll-section" id="press">
       <div class="container">
         <header class="section-head section-head--center reveal">
           <p class="eyebrow">In the news</p>
@@ -156,27 +169,27 @@
     </section>
 
     <!-- TEAM -->
-    <section class="section" id="team">
+    <section class="section scroll-section" id="team">
       <div class="container">
         <header class="section-head section-head--center reveal">
           <p class="eyebrow">Our people</p>
           <h2 class="section-title">Verified. Trained. <em>Compassionate.</em></h2>
         </header>
-        <img class="team-photo reveal" src="resources/team-group.jpg" alt="Sathe Achi care team" loading="lazy" />
+        <img class="team-photo reveal reveal--fade reveal--slow" src="resources/team-group.jpg" alt="Sathe Achi care team" loading="lazy" />
       </div>
     </section>
 
     <!-- REVIEWS -->
-    <section class="section section--alt" id="reviews">
+    <section class="section section--alt scroll-section" id="reviews">
       <div class="container">
         <header class="section-head section-head--center reveal">
           <p class="eyebrow">Google reviews</p>
           <h2 class="section-title">What families say</h2>
         </header>
-        <div class="reviews-grid reveal">
-          <img src="resources/review-1.png" alt="Google review" loading="lazy" />
-          <img src="resources/review-2.png" alt="Google review" loading="lazy" />
-          <img src="resources/review-3.png" alt="Google review" loading="lazy" />
+        <div class="reviews-grid reveal-stagger">
+          <img class="reveal-child" src="resources/review-1.png" alt="Google review" loading="lazy" />
+          <img class="reveal-child" src="resources/review-2.png" alt="Google review" loading="lazy" />
+          <img class="reveal-child" src="resources/review-3.png" alt="Google review" loading="lazy" />
         </div>
         <p style="text-align:center;margin-top:1.5rem;" class="reveal">
           <a href="https://maps.google.com/?cid=1128786054787875263" class="btn btn--outline" target="_blank" rel="noopener">See all reviews</a>
@@ -185,7 +198,7 @@
     </section>
 
     <!-- FAQ -->
-    <section class="section" id="faq">
+    <section class="section scroll-section" id="faq">
       <div class="container">
         <header class="section-head section-head--center reveal">
           <h2 class="section-title">Honest answers</h2>
@@ -212,7 +225,7 @@
     </section>
 
     <!-- CONTACT -->
-    <section class="section section--alt" id="contact">
+    <section class="section section--alt scroll-section" id="contact">
       <div class="container contact-grid">
         <div class="reveal">
           <p class="eyebrow">Get started</p>

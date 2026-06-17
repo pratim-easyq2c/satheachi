@@ -134,7 +134,7 @@ function renderPlans() {
   const grid = document.getElementById('pricing-grid');
   if (!grid) return;
 
-  grid.innerHTML = PLANS.map((p) => {
+  grid.innerHTML = PLANS.map((p, i) => {
     const pr = p.pricing;
     let priceHtml;
     if (p.daily) {
@@ -155,7 +155,7 @@ function renderPlans() {
     const highlights = p.highlights.map((h) => `<span>${h}</span>`).join('');
 
     return `
-      <article class="price-card ${p.popular ? 'price-card--featured' : ''}" data-plan="${p.id}">
+      <article class="price-card reveal-card ${p.popular ? 'price-card--featured' : ''}" data-plan="${p.id}" style="--stagger-i: ${i}">
         ${p.popular ? '<span class="price-card__badge">Most chosen</span>' : ''}
         <header class="price-card__head">
           <p class="price-card__bn">${p.bengali}</p>
@@ -169,13 +169,14 @@ function renderPlans() {
         <a href="https://wa.me/917044063399?text=${encodeURIComponent('Hi Sathe Achi, I am interested in ' + p.name)}" class="btn ${p.popular ? 'btn--primary' : 'btn--outline'} btn--block" target="_blank" rel="noopener">Enquire on WhatsApp</a>
       </article>`;
   }).join('');
+  scrollMotion?.observeRevealTargets(grid);
 }
 
 function renderServices() {
   const grid = document.getElementById('services-bento');
   if (!grid) return;
   grid.innerHTML = SERVICES.map((s, i) => `
-    <article class="bento-item ${i === 0 ? 'bento-item--hero' : ''}">
+    <article class="bento-item reveal-card ${i === 0 ? 'bento-item--hero' : ''}" style="--stagger-i: ${i}">
       <img src="resources/${s.img}" alt="${s.title}" loading="lazy" />
       <div class="bento-item__body">
         ${s.tag ? `<span class="bento-item__tag">${s.tag}</span>` : ''}
@@ -184,13 +185,14 @@ function renderServices() {
       </div>
     </article>
   `).join('');
+  scrollMotion?.observeRevealTargets(grid);
 }
 
 function renderNews() {
   const grid = document.getElementById('news-grid');
   if (!grid) return;
-  grid.innerHTML = ARTICLES.map((a) => `
-    <a href="${a.url}" class="news-card ${a.video ? 'news-card--video' : ''}" target="_blank" rel="noopener">
+  grid.innerHTML = ARTICLES.map((a, i) => `
+    <a href="${a.url}" class="news-card reveal-card ${a.video ? 'news-card--video' : ''}" style="--stagger-i: ${i}" target="_blank" rel="noopener">
       <div class="news-card__media">
         <img src="${a.img}" alt="" loading="lazy" />
         ${a.video ? '<span class="news-card__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>' : ''}
@@ -203,6 +205,7 @@ function renderNews() {
       </div>
     </a>
   `).join('');
+  scrollMotion?.observeRevealTargets(grid);
 }
 
 function setBilling(mode) {
@@ -225,18 +228,120 @@ function initHeader() {
   nav?.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => nav.classList.remove('is-open')));
 }
 
-function initReveal() {
-  const els = document.querySelectorAll('.reveal');
-  if (!('IntersectionObserver' in window)) {
-    els.forEach((el) => el.classList.add('is-visible'));
-    return;
+function initScrollMotion() {
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let revealObserver;
+  let sectionObserver;
+
+  function assignStaggerIndices() {
+    document.querySelectorAll('.reveal-stagger').forEach((group) => {
+      group.querySelectorAll('.reveal-child').forEach((child, i) => {
+        child.style.setProperty('--stagger-i', i);
+      });
+    });
   }
-  const obs = new IntersectionObserver(
-    (entries) => entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); } }),
-    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
-  );
-  els.forEach((el) => obs.observe(el));
+
+  function observeRevealTargets(root = document) {
+    if (!revealObserver) return;
+    const sel = '.reveal, .reveal-stagger, .reveal-card, .gallery-strip';
+    root.querySelectorAll(sel).forEach((el) => {
+      if (el.classList.contains('is-visible')) return;
+      revealObserver.observe(el);
+      revealIfInView(el);
+    });
+  }
+
+  function revealIfInView(el) {
+    const r = el.getBoundingClientRect();
+    if (r.top < window.innerHeight * 0.92 && r.bottom > 0) {
+      el.classList.add('is-visible');
+      revealObserver?.unobserve(el);
+    }
+  }
+
+  function initRevealObservers() {
+    if (reduced) {
+      document.querySelectorAll('.reveal, .reveal-stagger, .reveal-card, .gallery-strip').forEach((el) => {
+        el.classList.add('is-visible');
+      });
+      document.querySelectorAll('.scroll-section').forEach((el) => el.classList.add('is-inview'));
+      return;
+    }
+
+    revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          e.target.classList.add('is-visible');
+          revealObserver.unobserve(e.target);
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -6% 0px' }
+    );
+
+    sectionObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          e.target.classList.toggle('is-inview', e.isIntersecting);
+        });
+      },
+      { threshold: 0.15, rootMargin: '-10% 0px -10% 0px' }
+    );
+
+    document.querySelectorAll('.scroll-section').forEach((el) => sectionObserver.observe(el));
+    observeRevealTargets();
+  }
+
+  function initParallax() {
+    if (reduced) return;
+    const layers = document.querySelectorAll('[data-parallax]');
+    if (!layers.length) return;
+
+    let ticking = false;
+    const update = () => {
+      const vh = window.innerHeight;
+      layers.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        const center = rect.top + rect.height * 0.5;
+        const dist = (center - vh * 0.5) / vh;
+        const rate = parseFloat(el.dataset.parallax) || 0.1;
+        const y = Math.max(-40, Math.min(40, dist * rate * -80));
+        el.style.setProperty('--parallax-y', `${y}px`);
+      });
+      ticking = false;
+    };
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(update);
+        ticking = true;
+      }
+    }, { passive: true });
+    update();
+  }
+
+  function initSmoothAnchors() {
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+      link.addEventListener('click', (e) => {
+        const id = link.getAttribute('href');
+        if (!id || id === '#') return;
+        const target = document.querySelector(id);
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
+      });
+    });
+  }
+
+  assignStaggerIndices();
+  initRevealObservers();
+  initParallax();
+  initSmoothAnchors();
+
+  return { observeRevealTargets, assignStaggerIndices };
 }
+
+let scrollMotion;
 
 function initHeroSlides() {
   const slides = document.querySelectorAll('.hero__slide');
@@ -276,10 +381,7 @@ const CARE_FEED = [
   { title: 'Medicine refilled', meta: 'Apollo Pharmacy · receipt attached' },
 ];
 
-function initCareFeed() {
-  const list = document.getElementById('care-feed-list');
-  if (!list) return;
-
+function renderCareFeedItems(list) {
   const defaults = CARE_FEED.slice(0, 3);
   list.innerHTML = defaults.map((item, i) => `
     <li class="care-feed__item${i === 0 ? ' is-live' : ''}">
@@ -287,10 +389,19 @@ function initCareFeed() {
       <div><strong>${item.title}</strong><small>${item.meta}</small></div>
     </li>
   `).join('');
+}
+
+function initCareFeed() {
+  const list = document.getElementById('care-feed-list');
+  if (!list) return;
+
+  if (!list.querySelector('.care-feed__item')) renderCareFeedItems(list);
 
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   const items = list.querySelectorAll('.care-feed__item');
+  if (!items.length) return;
+
   let feedIdx = 0;
   setInterval(() => {
     items.forEach((el) => el.classList.remove('is-live'));
@@ -304,16 +415,22 @@ function initCareFeed() {
   }, 4500);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+function onReady() {
+  initCareFeed();
+  scrollMotion = initScrollMotion();
   renderPlans();
   renderServices();
   renderNews();
   initHeader();
-  initReveal();
   initHeroSlides();
   initGallery();
-  initCareFeed();
   document.querySelectorAll('[data-billing]').forEach((btn) => {
     btn.addEventListener('click', () => setBilling(btn.dataset.billing));
   });
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', onReady);
+} else {
+  onReady();
+}

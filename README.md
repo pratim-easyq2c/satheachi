@@ -4,7 +4,7 @@
 Built with `css/design.css` + `js/app.js` (Fraunces/DM Sans, bento layout, live Care Sathi card, full pricing toggle).
 
 **Live:** https://pratim-easyq2c.github.io/satheachi/ *(updates after push)*  
-**Brochure (3-page PDF):** https://pratim-easyq2c.github.io/satheachi/brochure/  
+**Brochure (single-page A4 PDF):** https://pratim-easyq2c.github.io/satheachi/brochure/  
 **Legacy copy (reference):** `legacy-satheachi-co-in-copy.html` — the previous near-duplicate of production.
 
 ## Pricing (official)

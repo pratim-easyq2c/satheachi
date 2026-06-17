@@ -3,151 +3,160 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sathe Achi — Brochure 2026</title>
+  <title>Sathe Achi — Brochure</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="brochure.css" />
 </head>
 <body>
   <div class="toolbar no-print">
     <a href="../index.html">← Website</a>
-    <strong>Sathe Achi Brochure</strong>
+    <strong>Sathe Achi · Brochure</strong>
     <button type="button" onclick="window.print()">Print / Save PDF</button>
   </div>
-  <p class="hint no-print">A4 Portrait · Margins: None · Background graphics: ON · Double-sided for best result</p>
+  <p class="hint no-print">A4 portrait · Print → Save as PDF · Margins: None · Background graphics: ON</p>
 
-  <!-- PAGE 1 — COVER -->
-  <section class="page page-cover">
-    <div class="cover-top">
-      <img src="../resources/Logo-1-300x157.png" alt="Sathe Achi" class="logo" />
-      <p class="since">Since 2013 · Trusted by 500+ families</p>
-    </div>
-    <div class="cover-photo-wrap">
-      <img src="../resources/brochure-cover.jpeg" alt="Sathe Achi caregiver supporting a senior" class="cover-photo" />
-    </div>
-    <h1>Parents deserve care —<br><span>even when you're far away</span></h1>
-    <p class="cover-lead">Elder care at home in Barasat &amp; North Kolkata · Medical + daily living · One subscription</p>
-    <ul class="cover-pills">
-      <li>24/7 emergency</li>
-      <li>Verified caregivers</li>
-      <li>Teleconsult for NRIs</li>
-      <li>72hr deposit refund</li>
-    </ul>
-    <footer class="cover-foot">
-      <span><strong>+91 70440 63399</strong></span>
-      <span>satheachi.co.in · care@satheachi.in</span>
-    </footer>
-  </section>
-
-  <!-- PAGE 2 — PRICING -->
-  <section class="page page-pricing">
-    <header class="page-head">
-      <h2>Transparent pricing</h2>
-      <p>Monthly or yearly (5% off yearly) · Plans customisable · No hidden charges</p>
-    </header>
-
-    <div class="plan-grid">
-      <article class="plan-card popular">
-        <span class="ribbon">Most popular</span>
-        <h3>Regular Care <small>(Samparka)</small></h3>
-        <p class="plan-desc">Moderate support — safety net for independent seniors</p>
-        <div class="price-row">
-          <div><span class="amt">₹5,000</span><span class="per">/mo single</span></div>
-          <div class="sub">Couple ₹7,000/mo · Yearly ₹57,000 single (5% off)</div>
-        </div>
-        <p class="deposit">Deposit: ₹30,000 single / ₹50,000 couple (refundable)</p>
-        <ul class="feat-compact">
-          <li>2 phone calls + 2 companion visits / month</li>
-          <li>2 vital check-ups / month</li>
-          <li>24/7 hospitalisation + ambulance</li>
-          <li>Weekly bazar, banking, lab assistance</li>
-        </ul>
-      </article>
-
-      <article class="plan-card">
-        <h3>Complete Care <small>(Bhorsa)</small></h3>
-        <p class="plan-desc">Intensive support — daily help &amp; peace of mind</p>
-        <div class="price-row">
-          <div><span class="amt">₹13,000</span><span class="per">/mo single</span></div>
-          <div class="sub">Couple ₹16,000/mo · Yearly ₹1,48,200 single (5% off)</div>
-        </div>
-        <p class="deposit">Deposit: ₹40,000 single / ₹60,000 couple (refundable)</p>
-        <ul class="feat-compact">
-          <li>8 calls + 14 visits / month (8 companion + 6 technical)</li>
-          <li>₹1,000/mo lab test wallet credit</li>
-          <li>1 complimentary doctor-on-call / month</li>
-          <li>No Sunday/holiday surcharges · 50% off add-ons</li>
-        </ul>
-      </article>
-
-      <article class="plan-card">
-        <h3>Short Term <small>(Nirbhar)</small></h3>
-        <p class="plan-desc">7–15 days when family travels or during recovery</p>
-        <div class="price-row">
-          <div><span class="amt">₹1,000</span><span class="per">/day</span></div>
-          <div class="sub">One-time payment · No deposit</div>
-        </div>
-        <ul class="feat-compact">
-          <li>Daily calls &amp; daily visits</li>
-          <li>Full coverage during plan period</li>
-          <li>24/7 hospitalisation support</li>
-        </ul>
-      </article>
-    </div>
-
-    <aside class="addons">
-      <h4>Add-ons &amp; notes</h4>
-      <div class="addon-grid">
-        <span><strong>₹200/hr</strong> medical assistance (per person)</span>
-        <span><strong>₹200</strong> non-medical errands (bazar, official work)</span>
-        <span><strong>At cost</strong> nurse, physio, dementia expert, aya</span>
-        <span><strong>72 hours</strong> deposit refund if discontinued</span>
+  <article class="leaf" aria-label="Sathe Achi brochure">
+    <!-- Stacked photo rail -->
+    <aside class="leaf__rail" aria-label="Care moments">
+      <div class="rail-stack">
+        <figure><img src="../resources/gallery-2.jpg" alt="Companionship at home" /></figure>
+        <figure><img src="../resources/doctor-consultation-2.jpeg" alt="Doctor visit at home" /></figure>
+        <figure><img src="../resources/gallery-1.jpg" alt="Caregivers with seniors" /></figure>
+        <figure><img src="../resources/weekly-bazaar-v2.jpg" alt="Weekly bazaar help" /></figure>
+      </div>
+      <div class="leaf__rail-foot">
+        <p class="leaf__rail-bn" lang="bn">সাথে আছি</p>
+        <p class="leaf__rail-en">We are with you</p>
       </div>
     </aside>
 
-    <div class="photo-strip">
-      <img src="../resources/gallery-1.jpg" alt="" /><img src="../resources/gallery-3.jpg" alt="" /><img src="../resources/activities-2.jpg" alt="" />
-    </div>
-  </section>
+    <!-- Content column -->
+    <div class="leaf__main">
+      <header class="leaf__mast">
+        <img src="../resources/Logo-1-300x157.png" alt="Sathe Achi" class="leaf__logo" />
+        <p class="leaf__since">Barasat &amp; North Kolkata · Since 2013</p>
+      </header>
 
-  <!-- PAGE 3 — SERVICES & CONTACT -->
-  <section class="page page-services">
-    <header class="page-head">
-      <h2>Complete care under one roof</h2>
-      <p>Emergency hospitalisation included in every plan</p>
-    </header>
+      <section class="leaf__intro">
+        <h1>Parents deserve care — <em>even oceans away</em></h1>
+        <p class="leaf__deck">One subscription for elder care at home — emergencies, hospital, errands, banking, and the adda your parents still deserve.</p>
+      </section>
 
-    <div class="services-grid">
-      <div class="svc"><img src="../resources/emergency-v3.jpg" alt="" /><div><strong>Emergency Hospitalization</strong><span>Ambulance, admission, bedside support</span></div></div>
-      <div class="svc"><img src="../resources/doctor-consultation-v2.jpg" alt="" /><div><strong>Doctor Consultation</strong><span>Home visits + teleconsult for family abroad</span></div></div>
-      <div class="svc"><img src="../resources/pathological-v2.jpg" alt="" /><div><strong>Lab Tests</strong><span>Home sample collection &amp; reports</span></div></div>
-      <div class="svc"><img src="../resources/companionship-new.jpg" alt="" /><div><strong>Companionship</strong><span>Adda, walks, outings, festivals</span></div></div>
-      <div class="svc"><img src="../resources/banking-new.jpg" alt="" /><div><strong>Banking &amp; Paperwork</strong><span>Bills, pension, government documents</span></div></div>
-      <div class="svc"><img src="../resources/medication-v2.jpg" alt="" /><div><strong>Medication Management</strong><span>Pharmacy &amp; prescription tracking</span></div></div>
-      <div class="svc"><img src="../resources/weekly-bazaar-v2.jpg" alt="" /><div><strong>Weekly Bazaar</strong><span>Groceries &amp; household supplies</span></div></div>
-      <div class="svc"><img src="../resources/activities-new.jpg" alt="" /><div><strong>Activities &amp; Wellness</strong><span>Picnics, tours, social groups</span></div></div>
-    </div>
+      <ul class="leaf__stats" aria-label="Key facts">
+        <li><span class="leaf__stat-n">500+</span><span class="leaf__stat-l">families</span></li>
+        <li><span class="leaf__stat-n">10+</span><span class="leaf__stat-l">years</span></li>
+        <li><span class="leaf__stat-n">24/7</span><span class="leaf__stat-l">emergency</span></li>
+        <li><span class="leaf__stat-n">72hr</span><span class="leaf__stat-l">refund</span></li>
+      </ul>
 
-    <div class="story-block">
-      <h3>The <em>parar chele</em> spirit — professionally</h3>
-      <p>When children move away, who answers at 2 AM? Who runs to the hospital, the bank, the bazar? <strong>Sathe Achi</strong> is that faithful presence — trained, accountable, and always reachable. We don't replace family. We support you.</p>
-    </div>
+      <p class="leaf__voice">The <em>parar chele</em> spirit — done professionally. Verified caregivers. NRI teleconsult. We don't replace family; we support you.</p>
 
-    <div class="contact-row">
-      <div>
-        <h3>Start with a free home visit</h3>
-        <p class="phone">+91 <strong>70440 63399</strong></p>
-        <p>care@satheachi.in</p>
-        <p class="addr">Barasat, Kolkata — 700124<br>Office 10 AM – 7 PM · Emergency 24/7</p>
-        <p class="social">facebook.com/people/Sathe-Achi · @satheachii</p>
-      </div>
-      <div class="qr-block">
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=130x130&amp;data=https://pratim-easyq2c.github.io/satheachi/&amp;bgcolor=ffffff&amp;color=1a7a6d" width="110" height="110" alt="QR code" />
-        <span>Scan for plans &amp; website</span>
-      </div>
+      <section class="leaf__plans" aria-labelledby="plans-heading">
+        <div class="leaf__plans-head">
+          <h2 id="plans-heading">Plans</h2>
+          <p>Yearly 5% off · Deposit refunded in 72 hours</p>
+        </div>
+
+        <div class="plan-grid" role="table" aria-label="Pricing comparison">
+          <div class="plan-grid__row plan-grid__row--head" role="row">
+            <span class="plan-grid__label" role="columnheader"></span>
+            <span class="plan-grid__col plan-grid__col--featured" role="columnheader">
+              Regular <small>Samparka</small>
+              <span class="plan-grid__badge">Most chosen</span>
+            </span>
+            <span class="plan-grid__col" role="columnheader">Complete <small>Bhorsa</small></span>
+            <span class="plan-grid__col" role="columnheader">Short term <small>Nirbhar</small></span>
+          </div>
+
+          <div class="plan-grid__row" role="row">
+            <span class="plan-grid__label" role="rowheader">Price</span>
+            <span class="plan-grid__col plan-grid__col--featured" role="cell"><strong>₹5,000</strong>/mo</span>
+            <span class="plan-grid__col" role="cell"><strong>₹13,000</strong>/mo</span>
+            <span class="plan-grid__col" role="cell"><strong>₹1,000</strong>/day</span>
+          </div>
+
+          <div class="plan-grid__row" role="row">
+            <span class="plan-grid__label" role="rowheader">Couple</span>
+            <span class="plan-grid__col plan-grid__col--featured" role="cell">₹7,000/mo</span>
+            <span class="plan-grid__col" role="cell">₹16,000/mo</span>
+            <span class="plan-grid__col" role="cell">—</span>
+          </div>
+
+          <div class="plan-grid__row" role="row">
+            <span class="plan-grid__label" role="rowheader">Deposit</span>
+            <span class="plan-grid__col plan-grid__col--featured" role="cell">₹30k / ₹50k</span>
+            <span class="plan-grid__col" role="cell">₹40k / ₹60k</span>
+            <span class="plan-grid__col" role="cell">None</span>
+          </div>
+
+          <div class="plan-grid__row plan-grid__row--last" role="row">
+            <span class="plan-grid__label" role="rowheader">Includes</span>
+            <span class="plan-grid__col plan-grid__col--featured" role="cell">2 calls + 2 visits/mo · 24/7 hospital · bazar &amp; banking</span>
+            <span class="plan-grid__col" role="cell">14 visits/mo · ₹1k lab wallet · no holiday surcharges</span>
+            <span class="plan-grid__col" role="cell">7–15 days · daily calls &amp; visits · full coverage</span>
+          </div>
+        </div>
+
+        <p class="leaf__addons">Add-ons: <strong>₹200/hr</strong> medical · <strong>₹200</strong> errands · nurse &amp; physio at cost · emergency hospitalisation on all plans</p>
+      </section>
+
+      <section class="leaf__services" aria-labelledby="services-heading">
+        <h2 id="services-heading">Eight services · one subscription</h2>
+        <p class="leaf__service-flow">
+          <span>Emergency</span><span>Doctor</span><span>Lab tests</span><span>Companionship</span>
+          <span>Banking</span><span>Medication</span><span>Bazaar</span><span>Activities</span>
+        </p>
+      </section>
+
+      <section class="leaf__lower" aria-labelledby="moments-heading">
+        <div class="leaf__moments">
+          <h2 id="moments-heading">Care in action</h2>
+          <div class="leaf__moment-grid">
+            <figure>
+              <img src="../resources/emergency-v3.jpg" alt="Emergency hospitalisation support" />
+              <figcaption>Emergency</figcaption>
+            </figure>
+            <figure>
+              <img src="../resources/WhatsApp-Image-2024-12-01-at-1.47.30-PM-2-400x532.jpeg" alt="Warm companionship visit" />
+              <figcaption>Companionship</figcaption>
+            </figure>
+            <figure>
+              <img src="../resources/activities-3.jpg" alt="Outings and activities" />
+              <figcaption>Activities</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="leaf__abroad">
+          <h2>For families abroad</h2>
+          <ul>
+            <li>Visit reports &amp; photos after every trip</li>
+            <li>Join doctor teleconsults from anywhere</li>
+            <li>One number for emergencies — we coordinate everything</li>
+          </ul>
+          <figure class="leaf__team">
+            <img src="../resources/team-group.jpg" alt="Sathe Achi care team" />
+            <figcaption>Your local team in Barasat</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <footer class="leaf__foot">
+        <div class="leaf__contact">
+          <p class="leaf__cta">Free home visit — no pressure</p>
+          <p class="leaf__phone"><a href="tel:+917044063399">+91 70440 63399</a></p>
+          <p class="leaf__meta">care@satheachi.in · Barasat, Kolkata 700124 · Office 10–7 · Emergency 24/7</p>
+        </div>
+        <div class="leaf__end">
+          <p class="leaf__press">As seen on <strong>ETV Bharat</strong> · <strong>Deutsche Welle</strong> · <strong>YouTube</strong></p>
+          <div class="leaf__qr">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&amp;data=https://pratim-easyq2c.github.io/satheachi/&amp;bgcolor=ffffff&amp;color=0d5c52" width="64" height="64" alt="QR code to website" />
+            <span>Full plans online</span>
+          </div>
+        </div>
+      </footer>
     </div>
-    <p class="tagline" lang="bn">সাথে আছি — We are with you</p>
-  </section>
+  </article>
 </body>
 </html>
