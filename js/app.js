@@ -83,10 +83,34 @@ const SERVICES = [
   { title: 'Activities & Wellness', img: 'activities-new.jpg', tag: '', desc: 'Picnics, cultural programs, group outings.' },
 ];
 
-const PRESS = [
-  { title: 'ETV Bharat', img: 'https://imgs.etvbharat.com/etvbharat/prod-images/02-10-2024/1200-675-22584262-thumbnail-16x9-aaaa-new.jpg', url: 'https://www.etvbharat.com/bn/!state/the-aged-purchase-companionship-and-friends-west-bengal-news-wbs24100106696', label: 'বন্ধু হবে কি আমার...' },
-  { title: 'Deutsche Welle', img: 'https://static.dw.com/image/44221998_6.jpg', url: 'https://www.dw.com/bn/', label: "প্রবীণদের সহায়তায় 'সাথে আছি'" },
-  { title: 'YouTube', img: 'https://i.ytimg.com/vi/Gf5CT7ZGJoo/maxresdefault.jpg', url: 'https://youtu.be/Gf5CT7ZGJoo', label: 'প্রবীণদের আনন্দ' },
+const ARTICLES = [
+  {
+    url: 'https://www.etvbharat.com/bn/!state/the-aged-purchase-companionship-and-friends-west-bengal-news-wbs24100106696',
+    title: 'বন্ধু হবে কি আমার... অপেক্ষায় তপন-সংঘমিত্রার মতো প্রবীণরা',
+    desc: 'টাকা দিয়ে তাঁরা কিনছেন আড্ডা মারার সাথী। বন্ধুত্বের হাত বাড়িয়ে দিচ্ছে \'সাথে আছি\' নামের সংস্থা।',
+    img: 'https://imgs.etvbharat.com/etvbharat/prod-images/02-10-2024/1200-675-22584262-thumbnail-16x9-aaaa-new.jpg',
+    source: 'ETV Bharat',
+    domain: 'etvbharat.com',
+    video: false,
+  },
+  {
+    url: 'https://www.dw.com/bn/%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%AC%E0%A7%80%E0%A6%A3%E0%A6%A6%E0%A7%87%E0%A6%B0-%E0%A6%B8%E0%A6%B9%E0%A6%BE%E0%A7%9F%E0%A6%A4%E0%A6%BE%E0%A7%9F-%E0%A6%B8%E0%A6%BE%E0%A6%A5%E0%A7%87-%E0%A6%86%E0%A6%9B%E0%A6%BF/video-44584029',
+    title: 'প্রবীণদের সহায়তায় \'সাথে আছি\'',
+    desc: 'পশ্চিমবঙ্গের দুই ব্যক্তি নিজেদের নিশ্চিত উপার্জন ছেড়ে প্রবীণদের সহায়তায় গড়ে তুলেছেন একটি সংস্থা।',
+    img: 'https://static.dw.com/image/44221998_6.jpg',
+    source: 'Deutsche Welle',
+    domain: 'dw.com',
+    video: true,
+  },
+  {
+    url: 'https://youtu.be/Gf5CT7ZGJoo',
+    title: 'প্রবীণদের আনন্দ',
+    desc: 'সাথে আছি-র সাথে প্রবীণদের আনন্দের মুহূর্ত — ভিডিওতে দেখুন।',
+    img: 'https://i.ytimg.com/vi/Gf5CT7ZGJoo/maxresdefault.jpg',
+    source: 'YouTube',
+    domain: 'youtube.com',
+    video: true,
+  },
 ];
 
 let billing = 'monthly';
@@ -162,13 +186,21 @@ function renderServices() {
   `).join('');
 }
 
-function renderPress() {
-  const row = document.getElementById('press-row');
-  if (!row) return;
-  row.innerHTML = PRESS.map((p) => `
-    <a href="${p.url}" class="press-card" target="_blank" rel="noopener">
-      <img src="${p.img}" alt="${p.title}" loading="lazy" />
-      <div><strong>${p.title}</strong><span>${p.label}</span></div>
+function renderNews() {
+  const grid = document.getElementById('news-grid');
+  if (!grid) return;
+  grid.innerHTML = ARTICLES.map((a) => `
+    <a href="${a.url}" class="news-card ${a.video ? 'news-card--video' : ''}" target="_blank" rel="noopener">
+      <div class="news-card__media">
+        <img src="${a.img}" alt="" loading="lazy" />
+        ${a.video ? '<span class="news-card__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>' : ''}
+      </div>
+      <div class="news-card__body">
+        <p class="news-card__source">${a.source}</p>
+        <h3 lang="bn">${a.title}</h3>
+        <p lang="bn">${a.desc}</p>
+        <span class="news-card__link">${a.domain} ↗</span>
+      </div>
     </a>
   `).join('');
 }
@@ -217,15 +249,22 @@ function initHeroSlides() {
   }, 5000);
 }
 
-function initGalleryMarquee() {
-  const track = document.getElementById('gallery-track');
-  if (!track) return;
+function initGallery() {
+  const scroll = document.getElementById('gallery-scroll');
+  if (!scroll) return;
   const imgs = [
-    'gallery-1.jpg', 'gallery-2.jpg', 'gallery-3.jpg', 'gallery-4.jpg', 'gallery-5.jpg',
-    'activities-2.jpg', 'companionship-2.jpg', 'doctor-consultation-2.jpeg', 'activities-3.jpg',
+    { src: 'gallery-1.jpg', alt: 'Sathe Achi caregivers with seniors' },
+    { src: 'gallery-2.jpg', alt: 'Elder companionship at home' },
+    { src: 'gallery-3.jpg', alt: 'Senior activities and outings' },
+    { src: 'gallery-4.jpg', alt: 'Community care moments' },
+    { src: 'gallery-5.jpg', alt: 'Wellness and support' },
+    { src: 'activities-3.jpg', alt: 'Group activities' },
+    { src: 'companionship-new.jpg', alt: 'Companionship visit' },
+    { src: 'doctor-consultation-2.jpeg', alt: 'Doctor consultation at home' },
   ];
-  const html = [...imgs, ...imgs].map((f) => `<img src="resources/${f}" alt="" loading="lazy" />`).join('');
-  track.innerHTML = html;
+  scroll.innerHTML = imgs.map((i) =>
+    `<img src="resources/${i.src}" alt="${i.alt}" loading="lazy" />`
+  ).join('');
 }
 
 const CARE_FEED = [
@@ -268,11 +307,11 @@ function initCareRibbon() {
 document.addEventListener('DOMContentLoaded', () => {
   renderPlans();
   renderServices();
-  renderPress();
+  renderNews();
   initHeader();
   initReveal();
   initHeroSlides();
-  initGalleryMarquee();
+  initGallery();
   initCareRibbon();
   document.querySelectorAll('[data-billing]').forEach((btn) => {
     btn.addEventListener('click', () => setBilling(btn.dataset.billing));
