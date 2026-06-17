@@ -262,9 +262,10 @@ function initGallery() {
     { src: 'companionship-new.jpg', alt: 'Companionship visit' },
     { src: 'doctor-consultation-2.jpeg', alt: 'Doctor consultation at home' },
   ];
-  scroll.innerHTML = imgs.map((i) =>
+  const slide = imgs.map((i) =>
     `<img src="resources/${i.src}" alt="${i.alt}" loading="lazy" />`
   ).join('');
+  scroll.innerHTML = slide + slide;
 }
 
 const CARE_FEED = [
@@ -275,32 +276,31 @@ const CARE_FEED = [
   { title: 'Medicine refilled', meta: 'Apollo Pharmacy · receipt attached' },
 ];
 
-function initCareRibbon() {
-  const root = document.getElementById('care-ribbon');
-  if (!root) return;
+function initCareFeed() {
+  const list = document.getElementById('care-feed-list');
+  if (!list) return;
 
-  root.innerHTML = CARE_FEED.map((item, i) =>
-    `<p class="care-ribbon__msg${i === 0 ? ' is-active' : ''}" role="status">
-      <strong>${item.title}</strong>
-      <span>— ${item.meta}</span>
-    </p>`
-  ).join('');
+  const defaults = CARE_FEED.slice(0, 3);
+  list.innerHTML = defaults.map((item, i) => `
+    <li class="care-feed__item${i === 0 ? ' is-live' : ''}">
+      <span class="care-feed__dot" aria-hidden="true"></span>
+      <div><strong>${item.title}</strong><small>${item.meta}</small></div>
+    </li>
+  `).join('');
 
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  const msgs = root.querySelectorAll('.care-ribbon__msg');
-  if (msgs.length < 2) return;
-
-  let idx = 0;
+  const items = list.querySelectorAll('.care-feed__item');
+  let feedIdx = 0;
   setInterval(() => {
-    const current = msgs[idx];
-    current.classList.remove('is-active');
-    current.classList.add('is-exit');
-    idx = (idx + 1) % msgs.length;
-    const next = msgs[idx];
-    next.classList.remove('is-exit');
-    next.classList.add('is-active');
-    setTimeout(() => current.classList.remove('is-exit'), 500);
+    items.forEach((el) => el.classList.remove('is-live'));
+    feedIdx = (feedIdx + 1) % CARE_FEED.length;
+    const slot = feedIdx % items.length;
+    const feed = CARE_FEED[feedIdx];
+    const item = items[slot];
+    item.querySelector('strong').textContent = feed.title;
+    item.querySelector('small').textContent = feed.meta;
+    item.classList.add('is-live');
   }, 4500);
 }
 
@@ -312,7 +312,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initReveal();
   initHeroSlides();
   initGallery();
-  initCareRibbon();
+  initCareFeed();
   document.querySelectorAll('[data-billing]').forEach((btn) => {
     btn.addEventListener('click', () => setBilling(btn.dataset.billing));
   });
