@@ -13,8 +13,7 @@ const PLANS = [
     pricing: {
       monthlySingle: 5000,
       monthlyCouple: 7000,
-      yearlySingle: 60000,
-      yearlyCouple: 72000,
+      yearlyCouple: 72000, // base annual couple rate before 5% → ₹68,400/yr
       deposit: '₹30,000 single · ₹50,000 couple',
     },
     highlights: ['2 companion visits / month', '24/7 hospitalisation', 'Weekly bazar & banking'],
@@ -37,8 +36,7 @@ const PLANS = [
     pricing: {
       monthlySingle: 13000,
       monthlyCouple: 16000,
-      yearlySingle: 156000,
-      yearlyCouple: 192000,
+      yearlyCouple: 192000, // base annual couple rate before 5% → ₹1,82,400/yr
       deposit: '₹40,000 single · ₹60,000 couple',
     },
     highlights: ['14 visits / month', '₹1,000 lab wallet credit', 'No holiday surcharges'],
@@ -97,6 +95,17 @@ function formatINR(n) {
   return n.toLocaleString('en-IN');
 }
 
+/** Yearly billing matches satheachi.co.in: 5% off monthly rate (single), 5% off yearly lump (couple). */
+function getYearlyPrices(pr) {
+  const singlePerMonth = Math.round(pr.monthlySingle * 0.95);
+  const singleAnnual = singlePerMonth * 12;
+  const couplePerMonth = pr.yearlyCouple
+    ? Math.round(pr.yearlyCouple * 0.95 / 12)
+    : Math.round(pr.monthlyCouple * 0.95);
+  const coupleAnnual = couplePerMonth * 12;
+  return { singlePerMonth, singleAnnual, couplePerMonth, coupleAnnual };
+}
+
 function renderPlans() {
   const grid = document.getElementById('pricing-grid');
   if (!grid) return;
@@ -107,11 +116,11 @@ function renderPlans() {
     if (p.daily) {
       priceHtml = `<span class="price__amount">₹${formatINR(pr.daily)}</span><span class="price__period">/ day · 7–15 days</span>`;
     } else if (billing === 'yearly') {
-      const perMo = Math.round(pr.yearlySingle / 12);
+      const y = getYearlyPrices(pr);
       priceHtml = `
-        <span class="price__amount">₹${formatINR(perMo)}</span><span class="price__period">/ month</span>
-        <p class="price__annual">₹${formatINR(pr.yearlySingle)} billed yearly <span class="price__save">5% off</span></p>
-        <p class="price__couple">Couple: ₹${formatINR(Math.round(pr.yearlyCouple / 12))}/mo (₹${formatINR(pr.yearlyCouple)}/yr)</p>`;
+        <span class="price__amount">₹${formatINR(y.singlePerMonth)}</span><span class="price__period">/ month</span>
+        <p class="price__annual">₹${formatINR(y.singleAnnual)} billed yearly <span class="price__save">5% off</span></p>
+        <p class="price__couple">Couple: ₹${formatINR(y.couplePerMonth)}/mo (₹${formatINR(y.coupleAnnual)}/yr)</p>`;
     } else {
       priceHtml = `
         <span class="price__amount">₹${formatINR(pr.monthlySingle)}</span><span class="price__period">/ month</span>
