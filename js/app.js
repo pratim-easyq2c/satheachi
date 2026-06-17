@@ -227,21 +227,33 @@ const CARE_FEED = [
   { title: 'Medicine refilled', meta: 'Apollo Pharmacy · receipt attached' },
 ];
 
-function initCareFeed() {
-  const card = document.querySelector('.care-card');
-  if (!card || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const items = card.querySelectorAll('.care-card__item');
-  if (!items.length) return;
+function initCareRibbon() {
+  const root = document.getElementById('care-ribbon');
+  if (!root) return;
+
+  root.innerHTML = CARE_FEED.map((item, i) =>
+    `<p class="care-ribbon__msg${i === 0 ? ' is-active' : ''}" role="status">
+      <strong>${item.title}</strong>
+      <span>— ${item.meta}</span>
+    </p>`
+  ).join('');
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const msgs = root.querySelectorAll('.care-ribbon__msg');
+  if (msgs.length < 2) return;
+
   let idx = 0;
   setInterval(() => {
-    items.forEach((el) => el.classList.remove('is-live'));
-    const item = items[idx % items.length];
-    const feed = CARE_FEED[idx % CARE_FEED.length];
-    item.querySelector('strong').textContent = feed.title;
-    item.querySelector('small').textContent = feed.meta;
-    item.classList.add('is-live');
-    idx = (idx + 1) % items.length;
-  }, 4200);
+    const current = msgs[idx];
+    current.classList.remove('is-active');
+    current.classList.add('is-exit');
+    idx = (idx + 1) % msgs.length;
+    const next = msgs[idx];
+    next.classList.remove('is-exit');
+    next.classList.add('is-active');
+    setTimeout(() => current.classList.remove('is-exit'), 500);
+  }, 4500);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -252,7 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initReveal();
   initHeroSlides();
   initGalleryMarquee();
-  initCareFeed();
+  initCareRibbon();
   document.querySelectorAll('[data-billing]').forEach((btn) => {
     btn.addEventListener('click', () => setBilling(btn.dataset.billing));
   });

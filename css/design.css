@@ -181,46 +181,50 @@ a:hover { color: var(--clay); }
   pointer-events: none;
 }
 
-/* Care Sathi card — anchored inside image column only */
-.care-card {
-  grid-area: visual;
-  align-self: end;
-  justify-self: end;
-  z-index: 3;
-  width: min(300px, calc(100% - 3rem));
-  margin: 0 1.75rem 1.75rem;
-  padding: 1.35rem;
-  background: rgba(255,255,255,0.94); backdrop-filter: blur(20px);
-  border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);
-  border: 1px solid rgba(255,255,255,0.8);
-  animation: floatCard 6s ease-in-out infinite;
-  pointer-events: auto;
+/* Care Sathi ribbon — slim ticker below hero */
+.care-ribbon {
+  background: var(--teal-900);
+  color: var(--white);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
-@keyframes floatCard {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+.care-ribbon__inner {
+  display: flex; align-items: center; gap: 1.25rem;
+  padding: 0.85rem 0; min-height: 3.25rem;
 }
-.care-card__label {
-  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em;
-  text-transform: uppercase; color: var(--teal-500); margin-bottom: 0.5rem;
+.care-ribbon__badge {
+  display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0;
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--sand-200);
 }
-.care-card h3 { font-family: var(--font-display); font-size: 1.15rem; margin-bottom: 0.75rem; }
-.care-card__item {
-  display: flex; gap: 0.65rem; align-items: flex-start;
-  padding: 0.55rem 0; font-size: 0.82rem; border-bottom: 1px solid var(--sand-100);
+.care-ribbon__pulse {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #4ade80; box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.5);
+  animation: ribbonPulse 2s ease-out infinite;
 }
-.care-card__item:last-child { border-bottom: none; }
-.care-card__dot {
-  width: 8px; height: 8px; border-radius: 50%; margin-top: 6px; flex-shrink: 0;
-  background: var(--teal-500); box-shadow: 0 0 0 3px var(--teal-100);
+@keyframes ribbonPulse {
+  0% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.55); }
+  70% { box-shadow: 0 0 0 8px rgba(74, 222, 128, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
 }
-.care-card__item.is-live .care-card__dot {
-  background: #22c55e; box-shadow: 0 0 8px #22c55e;
-  animation: pulse 2s infinite;
+.care-ribbon__messages {
+  flex: 1; min-width: 0; position: relative; height: 1.5rem; overflow: hidden;
 }
-@keyframes pulse { 50% { opacity: 0.5; } }
-.care-card__item strong { display: block; font-weight: 600; color: var(--ink); }
-.care-card__item small { color: var(--ink-soft); font-size: 0.72rem; }
+.care-ribbon__msg {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; gap: 0.5rem;
+  font-size: 0.92rem; line-height: 1.4;
+  opacity: 0; transform: translateY(100%);
+  transition: opacity 0.45s var(--ease), transform 0.45s var(--ease);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.care-ribbon__msg.is-active {
+  opacity: 1; transform: translateY(0);
+}
+.care-ribbon__msg.is-exit {
+  opacity: 0; transform: translateY(-100%);
+}
+.care-ribbon__msg strong { font-weight: 600; color: var(--white); }
+.care-ribbon__msg span { color: rgba(255, 255, 255, 0.65); font-size: 0.88rem; }
 
 /* Marquee gallery */
 .marquee {
@@ -480,23 +484,18 @@ a:hover { color: var(--clay); }
 @media (max-width: 1024px) {
   .hero {
     grid-template-columns: 1fr;
-    grid-template-areas:
-      "visual"
-      "care"
-      "copy";
+    grid-template-areas: "visual" "copy";
     min-height: auto;
   }
-  .hero__visual { min-height: 50vh; }
-  .hero__copy { padding: 2rem 1.5rem 3rem; }
+  .hero__visual { min-height: 42vh; }
+  .hero__copy { padding: 2rem 1.5rem 2.5rem; }
   .hero__copy::after { display: none; }
-  .care-card {
-    grid-area: care;
-    align-self: stretch;
-    justify-self: stretch;
-    width: auto;
-    margin: 1rem 1.5rem 0;
-    animation: none;
+  .care-ribbon__inner {
+    flex-direction: column; align-items: flex-start; gap: 0.5rem;
+    padding: 0.75rem 0;
   }
+  .care-ribbon__messages { width: 100%; height: 2.6rem; }
+  .care-ribbon__msg { white-space: normal; align-items: flex-start; }
   .story-grid, .nri-band, .contact-grid { grid-template-columns: 1fr; }
   .bento { grid-template-columns: 1fr 1fr; grid-auto-rows: auto; }
   .bento-item--hero { grid-column: span 2; }
