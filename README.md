@@ -4,6 +4,8 @@ Public website for [Sathe Achi](https://satheachi.co.in) elder care (Barasat & K
 
 **Live (after deploy):** https://pratim-easyq2c.github.io/satheachi/
 
+**Brochure (print/PDF):** https://pratim-easyq2c.github.io/satheachi/brochure/ — open and use **Print / Save PDF** (A4, background graphics on).
+
 **Repository:** https://github.com/pratim-easyq2c/satheachi
 
 ## Preview locally

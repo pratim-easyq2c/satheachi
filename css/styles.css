@@ -125,6 +125,13 @@ a:hover { color: var(--terracotta); }
   transition: color 0.2s;
 }
 .nav a:hover { color: var(--navy); }
+.nav__brochure {
+  padding: 0.4rem 0.9rem !important;
+  border: 1px solid var(--gold);
+  border-radius: 100px;
+  color: var(--navy) !important;
+}
+.nav__brochure:hover { background: var(--gold-dim, rgba(201,168,76,0.15)); }
 .nav__cta {
   padding: 0.55rem 1.25rem !important;
   background: var(--navy) !important;
