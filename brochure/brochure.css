@@ -159,7 +159,7 @@ body {
 }
 
 /* Hero copy */
-.leaf__intro { margin-bottom: 3.5mm; }
+.leaf__intro { margin-bottom: 2.5mm; }
 .leaf__intro h1 {
   font-family: var(--font-display);
   font-size: 13.5pt;
@@ -187,7 +187,7 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2mm;
-  margin-bottom: 3.5mm;
+  margin-bottom: 2.5mm;
 }
 .leaf__stat-n {
   display: block;
@@ -213,7 +213,7 @@ body {
   line-height: 1.45;
   padding-left: 3mm;
   border-left: 2px solid var(--clay);
-  margin-bottom: 4mm;
+  margin-bottom: 2.5mm;
 }
 .leaf__voice em {
   font-style: italic;
@@ -222,7 +222,7 @@ body {
 }
 
 /* Pricing table */
-.leaf__plans { margin-bottom: 3mm; flex-shrink: 0; }
+.leaf__plans { margin-bottom: 2mm; flex-shrink: 0; }
 .leaf__plans-head {
   display: flex;
   align-items: baseline;
@@ -252,11 +252,11 @@ body {
   display: contents;
 }
 .plan-grid__row > * {
-  padding: 1.8mm 2mm;
+  padding: 1.4mm 2mm;
   border-bottom: 1px solid var(--sand-100);
   display: flex;
   align-items: center;
-  min-height: 7mm;
+  min-height: 6mm;
 }
 .plan-grid__label {
   font-weight: 600;
@@ -544,9 +544,22 @@ body {
     grid-template-columns: 1fr;
   }
   .leaf__rail {
-    height: 42vw;
-    min-height: 160px;
-    max-height: 220px;
+    min-height: 200px;
+  }
+  .rail-stack {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 2mm;
+  }
+  .rail-stack figure {
+    flex: 1 1 45%;
+    min-height: 80px;
+  }
+  .leaf__lower {
+    grid-template-columns: 1fr;
+  }
+  .leaf__moment-grid {
+    min-height: 120px;
   }
   .plan-grid {
     grid-template-columns: 1fr 1fr;
