@@ -1,42 +1,24 @@
-# Sathe Achi — Website
+# Sathe Achi — Website (GitHub Pages)
 
-Public website for [Sathe Achi](https://satheachi.co.in) elder care (Barasat & Kolkata).
+Production-quality site ported from [satheachi.co.in](https://satheachi.co.in) with **full pricing**, **27 real photos** in `resources/`, NRI Facebook spotlight, news, Google review screenshots, and Sohini chatbot.
 
-**Live (after deploy):** https://pratim-easyq2c.github.io/satheachi/
+**Live:** https://pratim-easyq2c.github.io/satheachi/  
+**Brochure (3-page PDF):** https://pratim-easyq2c.github.io/satheachi/brochure/
 
-**Brochure (print/PDF):** https://pratim-easyq2c.github.io/satheachi/brochure/ — open and use **Print / Save PDF** (A4, background graphics on).
+## Pricing (official)
 
-**Repository:** https://github.com/pratim-easyq2c/satheachi
+| Plan | Single / month | Couple / month | Yearly (single) | Deposit |
+|------|----------------|----------------|-----------------|---------|
+| **Regular Care** (Samparka) | ₹5,000 | ₹7,000 | ₹60,000 | ₹30k / ₹50k |
+| **Complete Care** (Bhorsa) | ₹13,000 | ₹16,000 | ₹1,56,000 | ₹40k / ₹60k |
+| **Short Term** (Nirbhar) | ₹1,000/day | — | 7–15 days | None |
+
+- 5% off yearly · ₹200/hr medical add-on · ₹200 non-medical errands · 72hr deposit refund
 
 ## Preview locally
 
-Double-click `index.html`, or:
+`npx serve -l 8080` in this folder, or open `index.html`.
 
-```powershell
-npx serve -l 8080
-```
+## Deploy
 
-## GitHub Pages setup
-
-1. Push this folder to `main` on `pratim-easyq2c/satheachi`.
-2. GitHub → **Settings → Pages** → Build and deployment → Source: **GitHub Actions**.
-3. First push triggers `.github/workflows/pages.yml`; site goes live in ~1–2 minutes.
-
-## Custom domain (optional)
-
-To use `satheachi.co.in`:
-
-1. Add `site/CNAME` containing: `satheachi.co.in`
-2. DNS: `CNAME satheachi.co.in → pratim-easyq2c.github.io`
-3. Enable HTTPS in Pages settings.
-
-## Before production
-
-- [ ] Replace placeholder testimonials with verified quotes
-- [ ] Add Google Business review link
-- [ ] Confirm plan starting prices with founder
-- [ ] Add real team / member photos
-
-## Wiki / strategy docs
-
-Competitive research and content strategy live in the parent LLM-Wiki project (not deployed here).
+Push to `main` → GitHub Actions (`.github/workflows/pages.yml`).
